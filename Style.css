@@ -4,6 +4,7 @@ nav {
     opacity: 100%;
 }
 
-.blackText {
-    color:black;
+.endOfPage{
+    text-align: end;
 }
+
