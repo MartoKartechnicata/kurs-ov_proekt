@@ -16,33 +16,33 @@ if ( isset( $_POST['submit'] ) ) {
 	// записване на данните от полетата в променливи за по-удобно
 
 
-	$fighter1 = $_POST['fighter1'];
-	$fighter2 = $_POST['fighter2'];
-	$timeAndDate = $_POST['timeAndDate'];
+	$name = $_POST['name'];
+	$place = $_POST['place'];
+	$date = $_POST['date'];
 
 
 	$error = false;
 	
 	// изписване на грешка ако не е попълнен модел
 	
-	if ( !$fighter1 ) {
-		echo "<center style='color:red;'>Изберете първия участник</center>";
+	if ( !$name ) {
+		echo "<center style='color:red;'>Въведете име на събитието</center>";
 		$error = true;
 	}
 
 	// изписване на грешка ако не е попълнено описание
 
-	if ( !$fighter2 ) {
+	if ( !$place ) {
 		echo "<center style='color:red;'>Изберете втория участник</center>";
 		$error = true;
 	}
 	
-	// изписване на грешка ако не е попълнена цена
-	
-	if ( !$timeAndDate ) {
-		echo "<center style='color:red;'>Попълнете кога е събитието</center>";
+	if ( !$date ) {
+		echo "<center style='color:red;'>Изберете събитието</center>";
 		$error = true;
 	}
+	
+	// изписване на грешка ако не е попълнена цена
 
 	
 	
@@ -50,7 +50,7 @@ if ( isset( $_POST['submit'] ) ) {
 
 		// INSERT заявка към базата, с която се записват полетата
 
-        $eventInsert="INSERT INTO events ( fighter1id, fighter2id, timeAndDate) VALUES ('$fighter1','$fighter2','$timeAndDate')";
+        $eventInsert="INSERT INTO event (name,date,place) VALUES ('$name','$date','$place')";
 		$result = mysqli_query($connection, $eventInsert);
 		
 		// изписва съобщение, че всичко е минало успешно
@@ -78,42 +78,16 @@ if ( isset( $_POST['submit'] ) ) {
   <body>
 
   <form method="POST">
-        <label>Time and Date:</label>
-        <input type="datetime-local" name="timeAndDate" class="form-control">
+	<label>Name:<label>
+    <input type="text" name="name" value="<?= @$name ?>">
+    <br>
+    <label>Place:<label>
+    <input type="text" name="place" value="<?= @$place ?>">
+    <br>
+    <label>Date:</label>
+        <input type="date" name="date" class="form-control">
         <br>
-        <label>Fighter 1:</label>
-        <select name="fighter1">
-        <?php 
-
-$allFighters = mysqli_query($connection, "SELECT * FROM fighters");
-
-while ($row = $allFighters->fetch_assoc()){
-
-?>
-<option value="<?php echo $row['id']?>"><?php echo $row['firstName']." ".$row['lastName']; ?></option>
-
-<?php
-// close while loop 
-}
-?>
-        </select>
-        <br>
-        
-        <label>Fighter 2:</label>
-        <select name="fighter2">
-        <?php 
-
-$allFighters = mysqli_query($connection, "SELECT * FROM fighters");
-while ($row = $allFighters->fetch_assoc()){
-
-?>
-<option value="<?php echo $row['id']?>"><?php echo $row['firstName']." ".$row['lastName']; ?></option>
-
-<?php
-// close while loop 
-}
-?>
-        </select>
+	
         <br>
         <input type="submit" value="submit" name="submit">
     </form>
