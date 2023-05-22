@@ -35,7 +35,7 @@ session_start();
 
 <body>
     <?php 
-    include "menu.html" 
+    include "../components/header.html" 
     ?>
 <!--<div class="container text-center">
     <div class="row">
