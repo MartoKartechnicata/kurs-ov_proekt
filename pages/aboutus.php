@@ -1,3 +1,22 @@
+<?php 
+$sname= "localhost";
+$unmae= "root";
+$db_name = "test_db";
+
+$connection = mysqli_connect($sname, $unmae, "", "test");
+
+if (!$connection) {
+
+    echo "Connection failed!";
+
+}
+
+session_start();
+
+//if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
+
+?>
+
 <!DOCTYPE html>
 
 <html>

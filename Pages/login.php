@@ -50,7 +50,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     if ( !$error ) {
 
-        $stmt = $connection->prepare("SELECT * FROM users WHERE email = ?"); 
+        $stmt = $connection->prepare("SELECT * FROM user WHERE email = ?"); 
         $stmt->execute([ $email]); 
 	    $result = $stmt->fetch();
 

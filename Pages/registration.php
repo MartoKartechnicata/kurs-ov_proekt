@@ -46,7 +46,7 @@ if ( isset( $_POST['submit'] ) ) {
 		echo "<center style='color:red;'>The passwords do not match</center>";
 		$error=true;
 	}
-	$stmt = $connection->prepare("SELECT * FROM users WHERE email = ?"); 
+	$stmt = $connection->prepare("SELECT * FROM user WHERE email = ?"); 
         $stmt->execute([ $email]); 
 	    $result = $stmt->fetch();
 	if ($result) {
@@ -59,7 +59,7 @@ if ( isset( $_POST['submit'] ) ) {
 	
 	
 	if ( !$error ) {
-		$sql = "INSERT INTO users (firstName, lastName, email, password) VALUES (?,?,?,?)";
+		$sql = "INSERT INTO user (firstName, lastName, email, password) VALUES (?,?,?,?)";
 		$result = $connection->prepare($sql)->execute([$fName, $lName, $email, password_hash($password, PASSWORD_DEFAULT)]);
 		
 		
