@@ -81,32 +81,33 @@ if ( isset( $_POST['submit'] ) ) {
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registration form</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	  
+  <title>USF-Registration</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Registration page of the USF - UKTC STUDENT FIGHTS">
+    <meta name="keywords" content="usf, uktc, fights, register, information, mma, mma promotions">
+    <meta name="author" content="Martin Yordanov 19315, Kristiyan Yordanov 19313, Stivan Borisov 19321">
   </head>
   <body>
+             <?php include "../components/header.html" ?>
 
-				<form method="post" enctype="multipart/form-data">
-					<h1> Registration form</h1>
-					<br>
-					<label class="form-label">First Name:</label>
-					<input type="text" name="firstName" class="form-control">
-					<br>
+			<form method="post" enctype="multipart/form-data">
+				<h1> Registration form</h1>
+				<br>
+				<label class="form-label">First Name:</label>
+				<input type="text" name="firstName" class="form-control">
+				<br>
 
-					<label class="form-label">Last Name:</label>
-					<input name="lastName" class="form-control">
-					<br>
+				<label class="form-label">Last Name:</label>
+				<input name="lastName" class="form-control">
+				<br>
 
-					<label class="form-label">Email:</label>
-					<input name="email" class="form-control">
-					<br>
+				<label class="form-label">Email:</label>
+				<input name="email" class="form-control">
+	     		<br>
 
-					<label class="form-label">Password:</label>
+				<label class="form-label">Password:</label>
 					<input type="text" name="password" class="form-control">
-					<br>
+	    		<br>
 
 					<label class="form-label">Confirm Password:</label>
 					<input type="text" name="passwordC" class="form-control">

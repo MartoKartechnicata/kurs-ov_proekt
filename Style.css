@@ -1,1 +1,9 @@
-header{background-color:crimson; text-align: start; height: 75px;}
+nav {
+    background-color:crimson;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 100%;
+}
+
+.blackText {
+    color:black;
+}

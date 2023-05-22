@@ -87,16 +87,15 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
 
 <!doctype html>
-<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-
-	  
+  <title>USF-Registration</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Registration page of the USF - UKTC STUDENT FIGHTS">
+    <meta name="keywords" content="usf, uktc, fights, register, information, mma, mma promotions">
+    <meta name="author" content="Martin Yordanov 19315, Kristiyan Yordanov 19313, Stivan Borisov 19321">
   </head>
   <body>
+        <?php include "../components/header.html" ?>
 		<form method="post" enctype="multipart/form-data">
 		<h1> Login </h1>
 		<br>
