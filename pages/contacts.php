@@ -14,9 +14,11 @@
     <link rel="stylesheet" type="text/css" href="Style.css?v1=1234">
 </head>
 <body>
+  <header>
     <?php 
     include "../components/header.html" 
     ?>
+  </header>
 </body>
 
 </html>

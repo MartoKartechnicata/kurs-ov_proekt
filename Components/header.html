@@ -2,27 +2,22 @@
 <html>
     <head>
       <link rel="stylesheet" type="text/css" href="../Style.css">
+      <link href='https://unpkg.com/css.gg@2.0.0/icons/css/corner-right-down.css' rel='stylesheet'>
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg py-sm-5 py-md-5 py-xl-2">
   <div class="container-fluid">
     <img src="../images/logo1.png" alt="USF logo" style="height: 50px;" >
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span>Menu</span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse blackText btn-nav" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-text">
         <li class="nav-item">
           <a class="nav-link blackText" aria-current="page" href="../pages/homepage.php">Home</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle blackText" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Events
-          </a>
-          <ul class="dropdown-menu blackText">
-            <li><a class="dropdown-item blackText" href="#">Upcoming Events</a></li>
-            <li><a class="dropdown-item blackText" href="#">Past Events</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link blackText" href="#">Events</a>
         </li>
         <li class="nav-item">
           <a class="nav-link blackText" href="../pages/aboutus.php">About Us</a>
@@ -33,12 +28,19 @@
       </ul>
       <?php
       if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) { ?>
-        <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'registration.php';">Profile</button>
+        <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'profile.php';">Profile</button>
       <?php } else { ?>
-      <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'registration.php';">Register</button>
-      <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'login.php';">Login</button>
-      <?php }
-      ?>
+        <ul class="navbar-nav me-1 mb-1 mb-lg-0 navbar-text">
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-light btn-nav" onclick="window.location.href = 'registration.php';">Register</button>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-auto mb-2 mb-lg-0 navbar-text">
+          <li class="nav-item">
+      <button type="button" class="btn btn-outline-light btn-nav" onclick="window.location.href = 'login.php';">Login</button>
+          </li>
+      </ul>
+      <?php } ?>
     </div>
   </div>
 </nav>
