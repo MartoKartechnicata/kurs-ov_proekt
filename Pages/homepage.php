@@ -39,13 +39,16 @@ session_start();
       include "../components/header.html" 
       ?>
     </header>
-<!--<div class="container text-center">
-    <div class="row">
-        <header>
-            <img src="images/logo1.png" class="img-fluid" alt="usf logo" style="height:inherit;">
-        </header>
-    </div>
-</div> -->
+
+    <main style="background-color:white">
+        <p>text</p>
+    </main>
+
+    <footer>
+      <?php 
+      include "../components/footer.html" 
+      ?>
+    </footer>
 </body>
 
 </html>
