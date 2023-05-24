@@ -1,15 +1,16 @@
 <?php 
-$sname= "localhost";
-$unmae= "root";
-$db_name = "test_db";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "kp";
 
-$connection = mysqli_connect($sname, $unmae, "", "test");
-
-if (!$connection) {
-
-    echo "Connection failed!";
-
+try {
+	$connection = mysqli_connect($servername, $username, $password,$database,);
+	// echo "Connected successfully";
+} catch(PDOException $e) {
+	echo "Connection failed: " . $e->getMessage();
 }
+
 
 session_start();
 
