@@ -39,6 +39,13 @@ session_start();
     include "../components/header.html" 
     ?>
     </header>
+
+    
+    <footer>
+      <?php 
+      include "../components/footer.html" 
+      ?>
+    </footer>
 </body>
 
 </html>

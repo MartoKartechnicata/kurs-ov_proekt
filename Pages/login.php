@@ -111,6 +111,13 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 		<input name="password" class="form-control" >
 		<br>
 		<button name="submit" class="btn btn-primary w-100" type="submit" value="submit" >Submit</button>
- </form>		
+ </form>	
+
+ 
+    <footer>
+      <?php 
+      include "../components/footer.html" 
+      ?>
+    </footer>
 </body>
 </html>
