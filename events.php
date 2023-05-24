@@ -14,6 +14,8 @@ try {
 $allEvents = mysqli_query($connection, "SELECT * FROM event");
 if ( isset( $_POST['submit'] ) ) {
     $event=$_POST['submit'];
+
+    $allFights = mysqli_query($connection, "SELECT fight.* from fight join event on event_id=event.id");
 ?>
 <!doctype html>
 <html lang="en">
@@ -36,7 +38,7 @@ if ( isset( $_POST['submit'] ) ) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin panel</title>
+    <title>Event</title>
 	  
   </head>
   <body>
@@ -47,7 +49,7 @@ if ( isset( $_POST['submit'] ) ) {
 while ($row = $allEvents->fetch_assoc()){
 
 ?>
-<button type="submit" value="<?php echo $row['id'] ?>" name="submit"><</button><br>
+<button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button><br>
 <?php
 // close while loop 
 }
