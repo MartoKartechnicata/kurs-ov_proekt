@@ -34,9 +34,11 @@ session_start();
 </head>
 
 <body>
-    <?php 
-    include "../components/header.html" 
-    ?>
+    <header>
+      <?php 
+      include "../components/header.html" 
+      ?>
+    </header>
 <!--<div class="container text-center">
     <div class="row">
         <header>

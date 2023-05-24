@@ -95,7 +95,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     <meta name="author" content="Martin Yordanov 19315, Kristiyan Yordanov 19313, Stivan Borisov 19321">
   </head>
   <body>
-        <?php include "../components/header.html" ?>
+  <header>
+      <?php 
+      include "../components/header.html" 
+      ?>
+  </header>
 		<form method="post" enctype="multipart/form-data">
 		<h1> Login </h1>
 		<br>

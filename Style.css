@@ -1,10 +1,41 @@
 nav {
     background-color:crimson;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    opacity: 100%;
 }
 
-.endOfPage{
-    text-align: end;
+.navbar-button{
+    margin-left: 30px;
+}
+
+.blackText{
+    color:black;
+}
+
+.btn-nav{
+    font-size: 2.25rem;
+}
+
+.menu-btn{
+    font-size: 2.25rem;
+    color: black;
+    border-color: black;
+    font-weight: bold;
+}
+
+.navbar-text{
+    font-size: 2.25rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    align-items: center;
+}
+
+@media screen and (min-width: 992px) {
+    .navbar-text{
+        font-size:1rem;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: normal;
+    }
+    .btn-nav{
+        font-size:1rem;
+    }
 }
 
