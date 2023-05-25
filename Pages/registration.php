@@ -88,48 +88,66 @@ if ( isset( $_POST['submit'] ) ) {
     <meta name="author" content="Martin Yordanov 19315, Kristiyan Yordanov 19313, Stivan Borisov 19321">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  </head>
+	<link rel="stylesheet" type="text/css" href="../Style.css">
+ </head>
   <body>
     <header>
       <?php 
       include "../components/header.html" 
       ?>
     </header>
-		<form method="post" enctype="multipart/form-data">
-			    <h1> Registration form</h1>
-			    <br>
-				<label class="form-label">First Name:</label>
-				<input type="text" name="firstName" class="form-control">
-				<br>
-
-				<label class="form-label">Last Name:</label>
-				<input name="lastName" class="form-control">
-				<br>
-
-				<label class="form-label">Email:</label>
-				<input name="email" class="form-control">
-	     		<br>
-
-				<label class="form-label">Password:</label>
-					<input type="text" name="password" class="form-control">
-	    		<br>
-
-					<label class="form-label">Confirm Password:</label>
-					<input type="text" name="passwordC" class="form-control">
-					<br>
-
-					
-					<br><br>
-					<h3>Already have an account? <a href="login.php">Login</a><h3>
-					<button name="submit" class="btn btn-primary w-100" type="submit" value="submit" >Submit</button>
+	<main>
+<form method="post" enctype="multipart/form-data">
+<div class="container" style="background-color:blue">
+<div class="row">
+    <h1 style="text-align:center">Register</h1>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="fName" name="firstName">
+            <label for="fName">First name</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="lName" name="lastName">
+            <label for="lName">Last name</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInputGrid" name="email">
+        <label for="floatingInputGrid">Email address</label>
+      </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="password" name="password">
+            <label for="password">Password</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="passwordC" name="passwordC">
+            <label for="passwordC">Confirm Password</label>
+        </div>
+    </div>
+</div>    
+</div>
 </form>
+</main>
 
-
-<footer>
+   <footer>
       <?php 
       include "../components/footer.html" 
       ?>
-</footer>
+    </footer>
+
   </body>
 </html>
 
