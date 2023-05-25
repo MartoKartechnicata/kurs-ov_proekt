@@ -43,6 +43,7 @@ session_start();
 
     <main style="background-color:white">
         <p>text</p>
+        <p>Down arrow: <i class="arrow down"></i></p>
     </main>
 
     <footer>
