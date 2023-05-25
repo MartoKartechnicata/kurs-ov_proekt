@@ -95,9 +95,9 @@ if ( isset( $_POST['submit'] ) ) {
       include "../components/header.html" 
       ?>
     </header>
-			<form method="post" enctype="multipart/form-data">
-				<h1> Registration form</h1>
-				<br>
+		<form method="post" enctype="multipart/form-data">
+			    <h1> Registration form</h1>
+			    <br>
 				<label class="form-label">First Name:</label>
 				<input type="text" name="firstName" class="form-control">
 				<br>
@@ -122,7 +122,14 @@ if ( isset( $_POST['submit'] ) ) {
 					<br><br>
 					<h3>Already have an account? <a href="login.php">Login</a><h3>
 					<button name="submit" class="btn btn-primary w-100" type="submit" value="submit" >Submit</button>
-				</form>
+</form>
+
+
+<footer>
+      <?php 
+      include "../components/footer.html" 
+      ?>
+</footer>
   </body>
 </html>
 
