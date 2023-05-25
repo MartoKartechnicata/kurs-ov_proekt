@@ -5,7 +5,7 @@ $password = "";
 $database = "kp";
 
 try {
-	$connection = mysqli_connect($servername, $username, $password,$database,);
+	$connection = mysqli_connect($servername, $username, $password,$database);
 	// echo "Connected successfully";
 } catch(PDOException $e) {
 	echo "Connection failed: " . $e->getMessage();
@@ -73,17 +73,21 @@ if ( isset( $_POST['submit'] ) ) {
   <?php 
 
 while ($row = $allEvents->fetch_assoc()){
-
-?>
+  
+/*$ef=mysqli_query($connection, "Select fight.* from fight join event on Event_id=event.id where event.id='{$row['id']}'");
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	  <div class="carousel-inner">
       <?php
-    while ($r2 = $allFights->fetch_assoc()) {
-      $fighters=mysqli_query($connection, "Select fighter.* from fighter join fight on fighter1_")
+    while ($eventFights=$ef->fetch_assoc()) {
+      $fighters=mysqli_query($connection, "Select fighter.* from fighter join fight 
+      on fighter1id=fighter.id or fighter2id=fighter.id where fight.id='{$eventFights['id']}'")
       ?>
 		<div class="carousel-item active">
-		  <img src="images/<?php?>" class="d-block w-100" alt="...">
+		  <img src="../images/<?php echo $fighters['picture_name']?>" class="d-block w-100" alt="...">
 		</div>
+    <?php
+    }
+    ?>
     </div>
 	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -93,7 +97,8 @@ while ($row = $allEvents->fetch_assoc()){
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
 		<span class="visually-hidden">Next</span>
 	  </button>
-	</div>	
+	</div>	*/
+  ?>
 <button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button><br>
 <?php
 // close while loop 
