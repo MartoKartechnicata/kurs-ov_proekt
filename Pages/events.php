@@ -17,9 +17,9 @@ session_start();
 <html>
 
 <head>
-    <title>USF-Home</title>
+    <title>USF-Events</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Home page of the USF - UKTC STUDENT FIGHTS">
+    <meta name="description" content="Events page of the USF - UKTC STUDENT FIGHTS">
     <meta name="keywords" content="usf, uktc, fights, mma, mma promotions">
     <meta name="author" content="Martin Yordanov 19315, Kristiyan Yordanov 19313, Stivan Borisov 19321">
 
@@ -74,6 +74,7 @@ if ( isset( $_POST['submit'] ) ) {
 while ($row = $allEvents->fetch_assoc()){
 
 ?>
+
 <button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button><br>
 <?php
 // close while loop 

@@ -72,7 +72,7 @@ if ( isset( $_POST['submit'] ) ) {
 		
 		// завършване на upload-а и записване на качения файл в папка images
 	
-		move_uploaded_file( $file_temp, "../images/".$file_name );
+		move_uploaded_file( $file_temp, "../../images/".$file_name );
 	}
 
 	
