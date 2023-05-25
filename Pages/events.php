@@ -42,7 +42,8 @@ $allEvents = mysqli_query($connection, "SELECT * FROM event");
 if ( isset( $_POST['submit'] ) ) {
     $event=$_POST['submit'];
 
-    $allFights = mysqli_query($connection, "SELECT fight.* from fight join event on event_id=event.id");
+    $allFights = mysqli_query($connection, "SELECT * from fight");
+    $allFighters = mysqli_query($connection, "select * from fighter")
 ?>
 <html lang="en">
   <head>
@@ -74,7 +75,25 @@ if ( isset( $_POST['submit'] ) ) {
 while ($row = $allEvents->fetch_assoc()){
 
 ?>
-
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+	  <div class="carousel-inner">
+      <?php
+    while ($r2 = $allFights->fetch_assoc()) {
+      $fighters=mysqli_query($connection, "Select fighter.* from fighter join fight on fighter1_")
+      ?>
+		<div class="carousel-item active">
+		  <img src="images/<?php?>" class="d-block w-100" alt="...">
+		</div>
+    </div>
+	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	  </button>
+	  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	  </button>
+	</div>	
 <button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button><br>
 <?php
 // close while loop 
