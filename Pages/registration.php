@@ -98,25 +98,27 @@ if ( isset( $_POST['submit'] ) ) {
     </header>
 	<main>
 <form method="post" enctype="multipart/form-data">
-<div class="container" style="background-color:blue">
-<div class="row">
+<div class="container-fluid border-container-form" style="background-color:blue;">
+<div class="row register-form-heading">
     <h1 style="text-align:center">Register</h1>
 </div>
-<div class="row">
-    <div class="col-6">
+<div class="row form-rows">
+    <div class="col">
         <div class="form-floating">
             <input type="text" class="form-control" id="fName" name="firstName">
             <label for="fName">First name</label>
         </div>
     </div>
-    <div class="col-6">
+</div>
+<div class="row form-rows">
+    <div class="col">
         <div class="form-floating">
             <input type="text" class="form-control" id="lName" name="lastName">
             <label for="lName">Last name</label>
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row form-rows">
     <div class="col">
       <div class="form-floating">
         <input type="email" class="form-control" id="floatingInputGrid" name="email">
@@ -124,14 +126,16 @@ if ( isset( $_POST['submit'] ) ) {
       </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-6">
+<div class="row form-rows">
+    <div class="col">
         <div class="form-floating">
             <input type="text" class="form-control" id="password" name="password">
             <label for="password">Password</label>
         </div>
     </div>
-    <div class="col-6">
+</div>
+<div class="row form-rows">
+    <div class="col">
         <div class="form-floating">
             <input type="text" class="form-control" id="passwordC" name="passwordC">
             <label for="passwordC">Confirm Password</label>

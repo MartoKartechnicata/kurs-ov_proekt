@@ -1,40 +1,53 @@
 
-<div class="row">
-    <h1>Register</h1>
-</div>
-<div class="row">
-    <div class="col-6">
-        <div class="form-floating">
-            <input type="text" class="form-control" id="fName" name="firstName">
-            <label for="fName">First name</label>
+<div class="container border" style="background-color:blue; border-width: 5px; border-color: red;">
+    <div class="row">
+        <h1 style="text-align:center">Register</h1>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="fName" name="firstName">
+                <label for="fName">First name</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="lName" name="lastName">
+                <label for="lName">Last name</label>
+            </div>
         </div>
     </div>
-    <div class="col-6">
-        <div class="form-floating">
-            <input type="text" class="form-control" id="lName" name="lastName">
-            <label for="lName">Last name</label>
+    <div class="row">
+        <div class="col">
+          <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInputGrid" name="email">
+            <label for="floatingInputGrid">Email address</label>
+          </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col">
-      <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputGrid" name="email">
-        <label for="floatingInputGrid">Email address</label>
-      </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-6">
-        <div class="form-floating">
-            <input type="text" class="form-control" id="password" name="password">
-            <label for="password">Password</label>
+    <div class="row">
+        <div class="col-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="password" name="password">
+                <label for="password">Password</label>
+            </div>
         </div>
-    </div>
-    <div class="col-6">
-        <div class="form-floating">
-            <input type="text" class="form-control" id="passwordC" name="passwordC">
-            <label for="passwordC">Password</label>
+        <div class="col-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="passwordC" name="passwordC">
+                <label for="passwordC">Confirm Password</label>
+            </div>
         </div>
+    </div>    
     </div>
-</div>
+    </form>
+    </main>
+    
+       <footer>
+          <?php 
+          include "../components/footer.html" 
+          ?>
+        </footer>
+    
+      </body>
+    </html>
