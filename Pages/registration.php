@@ -100,12 +100,12 @@ if ( isset( $_POST['submit'] ) ) {
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col">
-        <img src="../images/logo1-red.png" alt="usf-logo">
+        <img src="../images/logo1-red.png" alt="usf-logo" style="height:75%">
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <h1 class="slogan">USF-We make the big fights</h1>
+        <h1 class="slogan">We make the big fights happen</h1>
 </div>
 </div>
 </div>
