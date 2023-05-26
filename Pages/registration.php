@@ -96,13 +96,25 @@ if ( isset( $_POST['submit'] ) ) {
       include "../components/header.html" 
       ?>
     </header>
-	<main>
-<form method="post" enctype="multipart/form-data">
-<div class="container-fluid border-container-form" style="background-color:blue;">
-<div class="row register-form-heading">
-    <h1 style="text-align:center">Register</h1>
+	<main class="form-background">
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col">
+        <img src="../images/logo1-red.png" alt="usf-logo">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        <h1 class="slogan">USF-We make the big fights</h1>
 </div>
-<div class="row form-rows">
+</div>
+</div>
+<form method="post" enctype="multipart/form-data">
+<div class="container-fluid border-container-form" style="background-color:gainsboro;">
+<div class="row register-form-heading">
+    <h2 style="text-align:center">Sign Up</h2>
+</div>
+<div class="row form-rows" style="padding-top:2%;">
     <div class="col">
         <div class="form-floating">
             <input type="text" class="form-control" id="fName" name="firstName">
@@ -134,14 +146,19 @@ if ( isset( $_POST['submit'] ) ) {
         </div>
     </div>
 </div>
-<div class="row form-rows">
+<div class="row last-row">
     <div class="col">
         <div class="form-floating">
             <input type="text" class="form-control" id="passwordC" name="passwordC">
             <label for="passwordC">Confirm Password</label>
         </div>
     </div>
-</div>    
+</div>
+<div class="row" style="text-align:center; padding-bottom:2%;">
+    <div class="col">
+       <input class="btn btn-danger" type="submit" value="Register">  
+    </div>
+</div>  
 </div>
 </form>
 </main>

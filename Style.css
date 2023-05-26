@@ -7,16 +7,34 @@ nav {
 }
 
 .form-rows{
-    padding-bottom: 4%;
+    padding-bottom: 3%;
+}
+.last-row{
+    padding-bottom: 2%;
+}
+
+.sumbit-btn-style{
+    text-align: center;
+    padding-bottom: 1%;
 }
 
 .register-form-heading{
-    padding-bottom:2%;
+    background-color: crimson;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     color:white
 }
 
 .btn-nav{
 font-size:2.25rem;
+}
+
+.form-background{
+    background-image: url("../kurs-ov_proekt/images/background-form.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    left:0;
 }
 
 .border-container-form{
@@ -25,11 +43,17 @@ font-size:2.25rem;
     border-radius: 25px;
 }
 
+.slogan{
+    text-align:center;
+    color:crimson;
+    font-family: fantasy;
+}
+
 form{
     padding-left: 30%;
     padding-right: 30%;
-    padding-top: 5%;
-    padding-bottom:20%;
+    padding-top: 10%;
+    padding-bottom:10%;
 }
 
 .toggler-menu{
@@ -76,6 +100,15 @@ ul label{
 }
 .text-center{
     text-align: center;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    margin-top: auto;
 }
 
 
