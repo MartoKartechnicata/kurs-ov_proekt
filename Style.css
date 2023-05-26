@@ -2,6 +2,20 @@ nav {
     background-color:crimson;
 }
 
+body{
+    width: 100%;
+    height: 100%;
+}
+html{
+    width:100%;
+    height:100%;
+}
+
+main{
+    width:100%;
+    height:100%;
+}
+
 .blackText{
     color:black;
 }
@@ -25,16 +39,18 @@ nav {
     color:white
 }
 
+
+
+.logo-form{
+    height: 50px;
+}
+
 .btn-nav{
 font-size:2.25rem;
 }
 
 .form-background{
-    background-image: url("../kurs-ov_proekt/images/background.jpg");
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    left:0;
+    background-color:white;
 }
 
 .border-container-form{
@@ -45,14 +61,14 @@ font-size:2.25rem;
 
 .slogan{
     text-align:center;
-    color:crimson;
-    font-family: fantasy;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:white;
 }
 
-form{
-    padding-left: 30%;
-    padding-right: 30%;
-    padding-bottom:10%;
+
+.registration-form{
+    padding-bottom:20%;
+    padding-top:20%;
 }
 
 .toggler-menu{
@@ -125,5 +141,24 @@ footer{
     }
     ul{
         text-align: end;
+    }
+    .logo-red{
+    height: 75px;
+    }
+    .form-background{
+        background-image: url("../kurs-ov_proekt/images/background.jpg");
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        left:0;
+    }
+    .registration-form{
+        padding-left: 30%;
+        padding-right: 30%;
+        padding-bottom:10%;
+        padding-top:0%
+    }
+    .logo-form{
+        height: 75px;
     }
 }
