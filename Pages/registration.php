@@ -101,14 +101,14 @@ if ( isset( $_POST['submit'] ) ) {
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col">
-        <div class="d-lg-block d-none">
+        <div class="d-md-block d-none">
         <img src="../images/logo1-white.png" alt="usf-logo" class="logo-form">
         </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <div class="d-lg-block d-none">
+        <div class="d-md-block d-none">
         <h1 class="slogan">We make the big fights happen</h1>
         </div>
 </div>

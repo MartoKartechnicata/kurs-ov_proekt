@@ -42,7 +42,7 @@ main{
 
 
 .logo-form{
-    height: 50px;
+    height: 75px;
 }
 
 .btn-nav{
@@ -127,7 +127,7 @@ footer{
 }
 
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
     .navbar-text{
         font-size: 1rem;
         font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -137,14 +137,12 @@ footer{
         font-size:1rem;
     }
     .footer-img{
-        text-align: justify;
+        text-align: start;
     }
     ul{
         text-align: end;
     }
-    .logo-red{
-    height: 75px;
-    }
+    
     .form-background{
         background-image: url("../kurs-ov_proekt/images/background.jpg");
         background-size:cover;
@@ -157,8 +155,5 @@ footer{
         padding-right: 30%;
         padding-bottom:10%;
         padding-top:0%
-    }
-    .logo-form{
-        height: 75px;
     }
 }

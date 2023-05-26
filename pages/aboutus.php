@@ -39,17 +39,24 @@ session_start();
     include "../components/header.html" 
     ?>
   </header>
+  <h1 class="text-center">About us</h1>
 
-  <div class="container">
-  <div class="row" style="padding-bottom: 20px; padding-top: 20px;">
-<h1 class="text-center">About us </h1>
-
-<p>The team We're a group of three students from the Vocational School of Computer Technology in the city of Pravets, Bulgaria and this is our
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-6">
+            <p>akfbkdbjsbjjbj<br>
+              ksd;jkjljfs;lj<br>
+            </p> 
+        </div>
+        <div class="col-lg-9 col-6">
+            <img src="../images/Screenshot_1.png">
+        </div>
+    </div>
+</div>
+<!--<p>The team We're a group of three students from the Vocational School of Computer Technology in the city of Pravets, Bulgaria and this is our
  course project. USF(UKTC Students Figthing) is a Bulgarian mixed martial arts (MMA) promotion company based in the dorms of UKTC.
  It is owned and operated by Martin Yordanov, Kristiyan Yordanov and Stivan Borisov.
- It produces events in Bulgaria that showcase 8 weight divisions and abides no rules whatsoever.</p>
-</div>
-</div>
+ It produces events in Bulgaria that showcase 8 weight divisions and abides no rules whatsoever.</p>..-->
     <footer>
       <?php 
       include "../components/footer.html" 
