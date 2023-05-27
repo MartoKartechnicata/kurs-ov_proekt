@@ -43,7 +43,9 @@ if ( isset( $_POST['submit'] ) ) {
     $event=$_POST['submit'];
 
     $allFights = mysqli_query($connection, "SELECT * from fight");
-    $allFighters = mysqli_query($connection, "select * from fighter")
+    $allFighters = mysqli_query($connection, "select * from fighter");
+    $_SESSION["event_id"]=$event;
+    echo $_SESSION["event_id"];
 ?>
 <html lang="en">
   <head>
@@ -55,6 +57,7 @@ if ( isset( $_POST['submit'] ) ) {
   <body>
     <p><?php echo $event ?></p>
     <br>
+    <a href="tickets.php">Buy tickets</a>
   </body>
 </html>
 <?php

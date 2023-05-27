@@ -19,6 +19,7 @@ if ( isset( $_POST['submit'] ) ) {
 	$name = $_POST['name'];
 	$place = $_POST['place'];
 	$date = $_POST['date'];
+	$price = $_POST['price'];
 
 
 	$error = false;
@@ -33,15 +34,19 @@ if ( isset( $_POST['submit'] ) ) {
 	// изписване на грешка ако не е попълнено описание
 
 	if ( !$place ) {
-		echo "<center style='color:red;'>Изберете втория участник</center>";
+		echo "<center style='color:red;'>Въведете място на събитието </center>";
 		$error = true;
 	}
 	
 	if ( !$date ) {
-		echo "<center style='color:red;'>Изберете събитието</center>";
+		echo "<center style='color:red;'>Изберете дата на събитието</center>";
 		$error = true;
 	}
 	
+	if ( !$price ) {
+		echo "<center style='color:red;'>Въведете цена на билиетите за събитието</center>";
+		$error = true;
+	}
 	// изписване на грешка ако не е попълнена цена
 
 	
@@ -50,7 +55,7 @@ if ( isset( $_POST['submit'] ) ) {
 
 		// INSERT заявка към базата, с която се записват полетата
 
-        $eventInsert="INSERT INTO event (name,date,place) VALUES ('$name','$date','$place')";
+        $eventInsert="INSERT INTO event (name,date,place,ticketPrice) VALUES ('$name','$date','$place','$price')";
 		$result = mysqli_query($connection, $eventInsert);
 		
 		// изписва съобщение, че всичко е минало успешно
@@ -92,11 +97,14 @@ if ( isset( $_POST['submit'] ) ) {
 </ul>
   <form method="POST">
 	<label>Name:</label>
-    <input type="text" name="name" value="<?= @$name ?>">
+    <input type="text" name="name">
     <br>
     <label>Place:</label>
-    <input type="text" name="place" value="<?= @$place ?>">
+    <input type="text" name="place">
     <br>
+	<label>Ticket price:</label>
+	<input type="number" name="price">
+	<br>
     <label>Date:</label>
         <input type="date" name="date" class="form-control">
         <br>
