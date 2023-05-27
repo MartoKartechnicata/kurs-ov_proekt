@@ -9,7 +9,9 @@ try {
 if ( isset( $_POST['submit'] ) ) {
 
 
-	$fName = $_POST['firstName'];
+	$fName = $_POST['firstName']; 
+    $fName2 = $_POST['firstName2']; 
+    if( !empty($fName) ){
 	$lName = $_POST['lastName'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
@@ -18,12 +20,6 @@ if ( isset( $_POST['submit'] ) ) {
 	
 
 	$error = false;
-	
-	
-	if ( !$fName ) {
-		echo "<center style='color:red;'>Please enter your first name </center>";
-		$error = true;
-	}
 
 
 	if ( !$lName ) {
@@ -74,6 +70,65 @@ if ( isset( $_POST['submit'] ) ) {
 	$email = htmlspecialchars( $email, ENT_QUOTES );
 	$password=htmlspecialchars($password, ENT_QUOTES);
     $passwordC=htmlspecialchars($passwordC, ENT_QUOTES);
+} else if (empty($fName) && !empty($fName2)){
+    $lName2 = $_POST['lastName'];
+	$email2 = $_POST['email'];
+	$password2 = $_POST['password'];
+	$passwordC2 = $_POST['passwordC'];
+
+	
+
+	$error = false;
+
+
+	if ( !$lName2 ) {
+		echo "<center style='color:red;'>Please enter your last name</center>";
+		$error = true;
+	}
+	
+	
+	if ( !$email2 ) {
+		echo "<center style='color:red;'>Please enter your email</center>";
+		$error = true;
+	}
+
+	if ( !$password2 ) {
+		echo "<center style='color:red;'>Please enter a password</center>";
+		$error = true;
+	}
+
+	if($passwordC2!=$password2){
+		echo "<center style='color:red;'>The passwords do not match</center>";
+		$error=true;
+	}
+	$stmt = $connection->prepare("SELECT * FROM user WHERE email = ?"); 
+        $stmt->execute([ $email]); 
+	    $result = $stmt->fetch();
+	if ($result) {
+		echo "Error";
+		$error=true;
+	}
+
+
+	
+	
+	
+	if ( !$error ) {
+		$sql = "INSERT INTO user (firstName, lastName, email, password) VALUES (?,?,?,?)";
+		$result = $connection->prepare($sql)->execute([$fName, $lName, $email, password_hash($password, PASSWORD_DEFAULT)]);
+		
+		if ( $result ) {
+            header("Location: login.php");
+		}
+	}
+	
+	
+	$fName = htmlspecialchars( $fName, ENT_QUOTES );
+	$lName = htmlspecialchars( $lName, ENT_QUOTES );
+	$email = htmlspecialchars( $email, ENT_QUOTES );
+	$password=htmlspecialchars($password, ENT_QUOTES);
+    $passwordC=htmlspecialchars($passwordC, ENT_QUOTES);
+}
 	
 }
 
@@ -136,7 +191,7 @@ if ( isset( $_POST['submit'] ) ) {
     </div>
     <div class="d-md-none d-block">
     <label class="label-mobile" for="fName">First name: </label>
-    <input type="text" class="form-control input-size" id="fName" name="firstName" placeholder="First Name">
+    <input type="text" class="form-control input-size" id="fName" name="firstName2" placeholder="First Name">
     </div>
     </div>
 </div>
@@ -150,7 +205,7 @@ if ( isset( $_POST['submit'] ) ) {
     </div>
     <div class="d-md-none d-block">
     <label class="label-mobile" for="lName">Last name: </label>
-    <input type="text" class="form-control input-size" id="lName" name="lastName" placeholder="Last Name">
+    <input type="text" class="form-control input-size" id="lName" name="lastName2" placeholder="Last Name">
     </div>
     </div>
 </div>
@@ -164,7 +219,7 @@ if ( isset( $_POST['submit'] ) ) {
     </div>
     <div class="d-md-none d-block">
     <label class="label-mobile" for="email">Email: </label>
-    <input type="email" class="form-control input-size" id="email" name="email" placeholder="Email Address">
+    <input type="email" class="form-control input-size" id="email" name="email2" placeholder="Email Address">
     </div>
     </div>
 </div>
@@ -178,7 +233,7 @@ if ( isset( $_POST['submit'] ) ) {
     </div>
     <div class="d-md-none d-block">
     <label class="label-mobile" for="password">Password: </label>
-    <input type="text" class="form-control input-size" id="password" name="password" placeholder="Password">
+    <input type="text" class="form-control input-size" id="password" name="password2" placeholder="Password">
     </div>
     </div>
 </div>
@@ -192,7 +247,7 @@ if ( isset( $_POST['submit'] ) ) {
     </div>
     <div class="d-md-none d-block"> 
     <label class="label-mobile" for="passwordC">Confirm Password: </label>
-    <input type="text" class="form-control input-size" id="passwordC" name="passwordC" placeholder="Confirm Password">
+    <input type="text" class="form-control input-size" id="passwordC" name="passwordC2" placeholder="Confirm Password">
     </div>
     </div>
 </div>
