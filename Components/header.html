@@ -23,6 +23,10 @@
       <?php
       if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) { ?>
         <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'profile.php';">Profile</button>
+        <?php
+      if ($_SESSION['admin']==1) { ?>
+        <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'admin/eventAdd.php';">Admin</button>
+      <?php }?>
       <?php } else { ?>
         <ul class="navbar-nav me-1 mb-1 mb-lg-0 navbar-text">
           <li class="nav-item">

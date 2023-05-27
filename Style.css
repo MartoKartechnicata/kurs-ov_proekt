@@ -51,8 +51,9 @@ main{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-h3.crimsonbg{
+h3.crimsonbg {
     background-color: crimson;
+}
 .about-account{
     color:black;
     opacity: 80%;
@@ -264,5 +265,8 @@ footer{
         padding-right: 35%;
         padding-bottom:10%;
         padding-top:2%
+    }
+    img.hgh{
+        height: 300;
     }
 }

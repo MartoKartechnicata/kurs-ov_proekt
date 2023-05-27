@@ -67,6 +67,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
                 $_SESSION['lastName'] = $row['lastName'];
 
+                $_SESSION['admin'] = $row['admin'];
+
                 header("Location: homepage.php");
 
                 exit();

@@ -73,6 +73,7 @@ if ( isset( $_POST['submit'] ) ) {
 	$lName = htmlspecialchars( $lName, ENT_QUOTES );
 	$email = htmlspecialchars( $email, ENT_QUOTES );
 	$password=htmlspecialchars($password, ENT_QUOTES);
+    $passwordC=htmlspecialchars($passwordC, ENT_QUOTES);
 	
 }
 
