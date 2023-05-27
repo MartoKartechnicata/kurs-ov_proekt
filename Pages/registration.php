@@ -102,7 +102,7 @@ if ( isset( $_POST['submit'] ) ) {
 		$error=true;
 	}
 	$stmt = $connection->prepare("SELECT * FROM user WHERE email = ?"); 
-        $stmt->execute([ $email]); 
+        $stmt->execute([ $email2]); 
 	    $result = $stmt->fetch();
 	if ($result) {
 		echo "Error";
@@ -110,7 +110,7 @@ if ( isset( $_POST['submit'] ) ) {
 	}
 	if ( !$error ) {
 		$sql = "INSERT INTO user (firstName, lastName, email, password) VALUES (?,?,?,?)";
-		$result = $connection->prepare($sql)->execute([$fName, $lName, $email, password_hash($password, PASSWORD_DEFAULT)]);
+		$result = $connection->prepare($sql)->execute([$fName2, $lName2, $email2, password_hash($password2, PASSWORD_DEFAULT)]);
 		
 		if ( $result ) {
             header("Location: login.php");
