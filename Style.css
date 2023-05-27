@@ -16,12 +16,19 @@ main{
     height:100%;
 }
 
+.italicText{
+    font-style: italic;
+}
+
 .form-color{
     background-color: black;
 }
 
 .blackText{
     color:black;
+}
+.whiteText{
+    color:white;
 }
 
 .form-rows{
@@ -41,7 +48,9 @@ main{
     color:crimson
 }
 
-
+h3.crimsonbg{
+    background-color: crimson;
+}
 
 .logo-form{
     height: 75px;
@@ -118,6 +127,9 @@ ul label{
 
 .text-center{
     text-align: center;
+}
+.text-right{
+    text-align: right;
 }
 
 body{
