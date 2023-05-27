@@ -71,10 +71,10 @@ if ( isset( $_POST['submit'] ) ) {
 	$password=htmlspecialchars($password, ENT_QUOTES);
     $passwordC=htmlspecialchars($passwordC, ENT_QUOTES);
 } else if (empty($fName) && !empty($fName2)){
-    $lName2 = $_POST['lastName'];
-	$email2 = $_POST['email'];
-	$password2 = $_POST['password'];
-	$passwordC2 = $_POST['passwordC'];
+    $lName2 = $_POST['lastName2'];
+	$email2 = $_POST['email2'];
+	$password2 = $_POST['password2'];
+	$passwordC2 = $_POST['passwordC2'];
 
 	
 
