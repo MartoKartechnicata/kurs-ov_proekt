@@ -108,11 +108,6 @@ if ( isset( $_POST['submit'] ) ) {
 		echo "Error";
 		$error=true;
 	}
-
-
-	
-	
-	
 	if ( !$error ) {
 		$sql = "INSERT INTO user (firstName, lastName, email, password) VALUES (?,?,?,?)";
 		$result = $connection->prepare($sql)->execute([$fName, $lName, $email, password_hash($password, PASSWORD_DEFAULT)]);
@@ -129,7 +124,29 @@ if ( isset( $_POST['submit'] ) ) {
 	$password=htmlspecialchars($password, ENT_QUOTES);
     $passwordC=htmlspecialchars($passwordC, ENT_QUOTES);
 }
-	
+	else if (empty($fName) && empty($fName2)){
+        echo "<center style='color:red;'>Please enter your last name</center>";
+        if ( !$lName2 && !$lName) {
+            echo "<center style='color:red;'>Please enter your last name</center>";
+            $error = true;
+        }
+        
+        
+        if ( !$email2 && !$email) {
+            echo "<center style='color:red;'>Please enter your email</center>";
+            $error = true;
+        }
+    
+        if ( !$password2 && !$password) {
+            echo "<center style='color:red;'>Please enter a password</center>";
+            $error = true;
+        }
+    
+        if($passwordC2!=$password2 && $passwordC!=$password){
+            echo "<center style='color:red;'>The passwords do not match</center>";
+            $error=true;
+        }
+    }
 }
 
 ?>
