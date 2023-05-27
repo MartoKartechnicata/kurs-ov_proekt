@@ -101,14 +101,14 @@ if ( isset( $_POST['submit'] ) ) {
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col">
-        <div class="d-md-block d-none">
+        <div class="d-lg-block d-none">
         <img src="../images/logo1-white.png" alt="usf-logo" class="logo-form">
         </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <div class="d-md-block d-none">
+        <div class="d-lg-block d-none">
         <h1 class="slogan">We make the big fights happen</h1>
         </div>
 </div>
@@ -117,51 +117,87 @@ if ( isset( $_POST['submit'] ) ) {
 <form method="post" class="registration-form" enctype="multipart/form-data">
 <div class="container-fluid border-container-form form-color">
 <div class="row register-form-heading">
+<div class="d-md-block d-none">
     <h2 style="text-align:center">Sign Up</h2>
 </div>
-<div class="row form-rows" style="padding-top:2%;">
+<div class="d-md-none d-block">
+<h2 style="text-align:center; padding-top:5%;">SIGN UP FORM</h2>
+<p class="about-account">Fill this sign up form to create your own USF account. Singing up for an USF account grants you the ability to book tickets for our events and gives you a more personalised experience on our website</p>
+</div>
+</div>
+<div class="row form-rows first-row">
     <div class="col">
+    <div class="d-md-block d-none">
         <div class="form-floating">
             <input type="text" class="form-control" id="fName" name="firstName" placeholder="First Name">
             <label for="fName">First name</label>
         </div>
     </div>
+    <div class="d-md-none d-block">
+    <label class="label-mobile" for="fName">First name: </label>
+    <input type="text" class="form-control input-size" id="fName" name="firstName" placeholder="First Name">
+    </div>
+    </div>
 </div>
 <div class="row form-rows">
     <div class="col">
+    <div class="d-md-block d-none">
         <div class="form-floating">
-            <input type="text" class="form-control" style="backgrou" id="lName" name="lastName" placeholder="Last Name">
+            <input type="text" class="form-control" id="lName" name="lastName" placeholder="Last Name">
             <label for="lName">Last name</label>
         </div>
     </div>
-</div>
-<div class="row form-rows">
-    <div class="col">
-      <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputGrid" name="email" placeholder="email">
-        <label for="floatingInputGrid">Email address</label>
-      </div>
+    <div class="d-md-none d-block">
+    <label class="label-mobile" for="lName">Last name: </label>
+    <input type="text" class="form-control input-size" id="lName" name="lastName" placeholder="Last Name">
+    </div>
     </div>
 </div>
 <div class="row form-rows">
     <div class="col">
+    <div class="d-md-block d-none">
+      <div class="form-floating">
+        <input type="email" class="form-control" id="email" name="email" placeholder="email Address">
+        <label for="email">Email address</label>
+      </div>
+    </div>
+    <div class="d-md-none d-block">
+    <label class="label-mobile" for="email">Email: </label>
+    <input type="email" class="form-control input-size" id="email" name="email" placeholder="Email Address">
+    </div>
+    </div>
+</div>
+<div class="row form-rows">
+    <div class="col">
+    <div class="d-md-block d-none">
         <div class="form-floating">
             <input type="text" class="form-control" id="password" name="password" placeholder="Password">
             <label for="password">Password</label>
         </div>
     </div>
+    <div class="d-md-none d-block">
+    <label class="label-mobile" for="password">Password: </label>
+    <input type="text" class="form-control input-size" id="password" name="password" placeholder="Password">
+    </div>
+    </div>
 </div>
 <div class="row last-row">
     <div class="col">
+    <div class="d-md-block d-none">
         <div class="form-floating">
             <input type="text" class="form-control" id="passwordC" name="passwordC" placeholder="Confirm Password">
             <label for="passwordC">Confirm Password</label>
         </div>
     </div>
+    <div class="d-md-none d-block"> 
+    <label class="label-mobile" for="passwordC">Confirm Password: </label>
+    <input type="text" class="form-control input-size" id="passwordC" name="passwordC" placeholder="Confirm Password">
+    </div>
+    </div>
 </div>
 <div class="row" style="text-align:center; padding-bottom:2%;">
     <div class="col">
-       <input class="btn btn-danger" type="submit" name="submit" value="Register">  
+       <input class="btn btn-danger btn-danger-submit" type="submit" name="submit" value="Register">  
     </div>
 </div>  
 </div>
