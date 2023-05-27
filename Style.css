@@ -66,7 +66,7 @@ main{
     text-align: center;
 }
 
-.btn-danger{
+.btn-danger-submit{
     width:100%;
     height: 150%;
 }
@@ -89,8 +89,13 @@ font-size:1.75rem;
 
 
 .registration-form{
-    padding-bottom:50%;
+    padding-bottom:20%;
     padding-top:0%;
+}
+
+.login-form{
+    padding-bottom: 100%;
+    padding-top: 10%;
 }
 
 .toggler-menu{
@@ -167,7 +172,7 @@ footer{
         font-size:1rem;
     }
 
-    .btn-danger{
+    .btn-danger-submit{
         width:auto;
         height: auto;
     }
@@ -184,10 +189,16 @@ footer{
         left:0;
     }
     .registration-form{
-        padding-left: 30%;
-        padding-right: 30%;
+        padding-left: 10%;
+        padding-right: 10%;
         padding-bottom:10%;
-        padding-top:0%
+        padding-top:10%
+    }
+    .login-form{
+        padding-left: 25%;
+        padding-right: 25%;
+        padding-bottom:10%;
+        padding-top:10%
     }
 
     .border-container-form{
@@ -228,5 +239,18 @@ footer{
 
     body{
         min-height: 100vh;
+    }
+
+    .registration-form{
+        padding-left: 30%;
+        padding-right: 30%;
+        padding-bottom:10%;
+        padding-top:0%
+    }
+    .login-form{
+        padding-left: 35%;
+        padding-right: 35%;
+        padding-bottom:10%;
+        padding-top:2%
     }
 }

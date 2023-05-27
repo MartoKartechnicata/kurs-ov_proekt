@@ -122,15 +122,20 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 </div>
 </div>
 </div>
-<form method="post" class="registration-form" enctype="multipart/form-data">
+<form method="post" class="login-form" enctype="multipart/form-data">
 <div class="container-fluid border-container-form form-color">
 <div class="row register-form-heading">
+<div class="d-md-block d-none">
     <h2 style="text-align:center">Sign In</h2>
+</div>
+<div class="d-md-none d-block">
+    <h1 style="text-align:center;padding-top:2%">SIGN IN</h1>
+</div>
 </div>
 <div class="row form-rows"  style="padding-top:2%;">
     <div class="col">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputGrid" name="email">
+        <input type="email" class="form-control" id="floatingInputGrid" name="email" placeholder="Email address">
         <label for="floatingInputGrid">Email address</label>
       </div>
     </div>
@@ -138,14 +143,14 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 <div class="row last-row">
     <div class="col">
         <div class="form-floating">
-            <input type="text" class="form-control" id="password" name="password">
+            <input type="text" class="form-control" id="password" name="password" placeholder="Password">
             <label for="password">Password</label>
         </div>
     </div>
 </div>
 <div class="row" style="text-align:center; padding-bottom:2%;">
     <div class="col">
-       <input class="btn btn-danger" type="submit" name="submit" value="Log in">  
+       <input class="btn btn-danger btn-danger-submit" type="submit" name="submit" value="Log in">  
     </div>
 </div>  
 </div>
