@@ -59,6 +59,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $row = ($result);
 
                 echo "Logged in!";
+                $_SESSION['user_id'] = $row['id'];
 
                 $_SESSION['email'] = $row['email'];
 
