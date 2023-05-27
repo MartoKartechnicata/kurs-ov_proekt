@@ -16,6 +16,10 @@ main{
     height:100%;
 }
 
+.form-color{
+    background-color: black;
+}
+
 .blackText{
     color:black;
 }
@@ -33,31 +37,25 @@ main{
 }
 
 .register-form-heading{
-    background-color: crimson;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    color:white
+
+    color:crimson
 }
 
 
 
 .logo-form{
-    height: 50px;
+    height: 75px;
 }
 
 .btn-nav{
-font-size:2.25rem;
+font-size:1.75rem;
 }
 
 .form-background{
     background-color:white;
 }
 
-.border-container-form{
-    border-width: 1.25px;
-    border-color: white;
-    border-radius: 25px;
-}
+
 
 .slogan{
     text-align:center;
@@ -67,8 +65,8 @@ font-size:2.25rem;
 
 
 .registration-form{
-    padding-bottom:20%;
-    padding-top:20%;
+    padding-bottom:0%;
+    padding-top:0%;
 }
 
 .toggler-menu{
@@ -110,9 +108,14 @@ ul label{
     align-items:center;
 }
 
-.footer-img{
+.footer-img-col{
     text-align: center;
 }
+
+.footer-img{
+    height: 100px;
+}
+
 .text-center{
     text-align: center;
 }
@@ -127,7 +130,7 @@ footer{
 }
 
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
     .navbar-text{
         font-size: 1rem;
         font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -136,15 +139,11 @@ footer{
     .btn-nav{
         font-size:1rem;
     }
+
     .footer-img{
-        text-align: justify;
+        height: auto;
     }
-    ul{
-        text-align: end;
-    }
-    .logo-red{
-    height: 75px;
-    }
+    
     .form-background{
         background-image: url("../kurs-ov_proekt/images/background.jpg");
         background-size:cover;
@@ -158,7 +157,30 @@ footer{
         padding-bottom:10%;
         padding-top:0%
     }
-    .logo-form{
-        height: 75px;
+
+    .border-container-form{
+        border-width: 1.25px;
+        border-color: white;
+        border-radius: 25px;
+    }
+
+    .register-form-heading{
+        background-color: crimson;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        color:white
+    }
+
+    .form-color{
+        background-color: gainsboro;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .footer-img-col{
+        text-align: start;
+    }
+    ul{
+        text-align: end;
     }
 }
