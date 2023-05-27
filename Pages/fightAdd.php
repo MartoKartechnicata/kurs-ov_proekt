@@ -76,15 +76,23 @@ if ( isset( $_POST['submit'] ) ) {
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin panel</title>
+    <title>USF-fightAdd</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Admin panel for adding fights in USF">
+    <meta name="keywords" content="usf, uktc, fights, mma, mma promotions">
+    <meta name="author" content="Martin Yordanov 19315, Kristiyan Yordanov 19313, Stivan Borisov 19321">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../Style.css">
+</head>
 	  
-  </head>
   <body>
+  <header>
+      <?php 
+      include "../components/header.html" 
+      ?>
+    </header>
   <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link" aria-current="page" href="eventAdd.php">Add an event</a>
@@ -98,15 +106,15 @@ if ( isset( $_POST['submit'] ) ) {
 </ul>
 
   <form method="POST">
-	<label>Event:<label>
-	<select name="event">
+	<label>Event:</label>
+	<select class="form-control" name="event">
         <?php 
 
 $allEvents = mysqli_query($connection, "SELECT * FROM event");
 while ($row = $allEvents->fetch_assoc()){
 
 ?>
-<option value="<?php echo $row['id']?>"><?php echo $row['name']?></option>
+<option  value="<?php echo $row['id']?>"><?php echo $row['name']?></option>
 
 <?php
 // close while loop 
@@ -115,10 +123,10 @@ while ($row = $allEvents->fetch_assoc()){
         </select>
 		<br>
         <label>Time:</label>
-        <input type="time" name="time" class="form-control">
+        <input  class="form-control" type="time" name="time" class="form-control">
         <br>
         <label>Fighter 1:</label>
-        <select name="fighter1">
+        <select class="form-control" name="fighter1">
         <?php 
 
 $allFighters = mysqli_query($connection, "SELECT * FROM fighter");
@@ -136,7 +144,7 @@ while ($row = $allFighters->fetch_assoc()){
         <br>
         
         <label>Fighter 2:</label>
-        <select name="fighter2">
+        <select class="form-control" name="fighter2">
         <?php 
 
 $allFighters = mysqli_query($connection, "SELECT * FROM fighter");
@@ -151,8 +159,15 @@ while ($row = $allFighters->fetch_assoc()){
 ?>
         </select>
         <br>
-        <input type="submit" value="submit" name="submit">
+        <div class="container-fluid text-center">
+        <input class="btn btn-primary" type="submit" name="submit" value="Submit" style="width:30%">  
+</div>
     </form>
     <br>
+	<footer>
+      <?php 
+      include "../components/footer.html" 
+      ?>
+    </footer>
   </body>
 </html>
