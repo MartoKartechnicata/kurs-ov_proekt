@@ -38,7 +38,7 @@ session_start();
             <address>
               via email: <a href="mailto:usf-contact@gmail.com" class="">usf-contact@gmail.com</a><br>
               via phone: <a href="tel:+359 87 817 2705">+359 87 817 2705</a><br>
-              Or through messaging us on one of our social media profiles:
+              Or through messaging us on one of our social media profiles:<br>
               <a class="fa-brands fa-facebook" href="https://www.facebook.com/martiyordanov2005/"></a>
               <a class="fa-brands fa-instagram" href="https://www.instagram.com/marto__yordanov/"></a>
             </address>
