@@ -181,6 +181,33 @@ footer{
 .aboutus-title{
     padding-top: 0.5%;
 }
+
+.contacts-heading{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    padding-top: 2.5%;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+.fa-instagram{
+    background-color: #ff0368;
+    color:white;
+}
+
+.fa-brands {
+    padding-top:1.5%;
+    padding-bottom:1.5%;
+    font-size:150%;
+    width: 9%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25%;
+  }
+
 @media screen and (min-width: 768px) {
     body{
         min-height: 200vh;
@@ -249,9 +276,29 @@ footer{
     .form-color{
         background-color: gainsboro;
     }
+
+    .fa-brands {
+        padding-top:1%;
+        padding-bottom:1%;
+        font-size:150%;
+        width: 6%;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 25%;
+      }
 }
 
 @media screen and (min-width: 992px) {
+
+    .fa-brands {
+        padding-top:0.5%;
+        padding-bottom:0.5%;
+        font-size:150%;
+        width: 3%;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 25%;
+      }
     .footer-img-col{
         text-align: start;
     }
