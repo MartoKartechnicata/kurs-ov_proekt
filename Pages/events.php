@@ -120,4 +120,3 @@ while ($row = $allEvents->fetch_assoc()){
     </footer>
     </body>
 </html>
-    
