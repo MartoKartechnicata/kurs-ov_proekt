@@ -51,6 +51,7 @@ if ( isset( $_POST['submit'] ) ) {
 while ($row = $allEvents->fetch_assoc()){
 
   ?>
+<img src="../images/<?php echo $row[picture_name]?>" alt="USF logo">
 <button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button><br>
 <?php
 // close while loop 
