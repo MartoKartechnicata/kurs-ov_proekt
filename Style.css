@@ -208,6 +208,13 @@ footer{
     border-radius: 25%;
   }
 
+  .events-container{
+    border: 1px crimson solid;
+  }
+  .events-fighter-picture{
+    height: 40%;
+  }
+
 @media screen and (min-width: 768px) {
     body{
         min-height: 200vh;
