@@ -10,7 +10,7 @@ try {
 } catch(PDOException $e) {
 	echo "Connection failed: " . $e->getMessage();
 }
-
+session_start();
 if ( isset( $_POST['submit'] ) ) {
 
 	// записване на данните от полетата в променливи за по-удобно
@@ -122,7 +122,8 @@ if ( isset( $_POST['submit'] ) ) {
 	
         <br>
         <div class="container-fluid text-center">
-        <input class="btn btn-primary" type="submit" name="submit" value="Submit" style="width:30%">  
+        <input class="btn btn-primary" type="submit" name="submit" value="Submit" style="width:30%"> 
+        
 </div>
     </form>
     <br>

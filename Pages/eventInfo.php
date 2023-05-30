@@ -54,9 +54,9 @@ while ($row = $allFights->fetch_assoc()){
 
   ?>
 <p><?php
-$f1=mysqli_query($connection, "Select fighter.firstName, fighter.lastName from fighter join fight on fighter1id=fighter.id where fight.id='{$row["id"]}'");
+$f1=mysqli_query($connection, "Select * from fighter join fight on fighter1id=fighter.id where fight.id='{$row["id"]}'");
 $fighter1=$f1->fetch_assoc();
-$f2=mysqli_query($connection, "Select fighter.firstName, fighter.lastName from fighter join fight on fighter2id=fighter.id where fight.id='{$row["id"]}'");
+$f2=mysqli_query($connection, "Select * from fighter join fight on fighter2id=fighter.id where fight.id='{$row["id"]}'");
 $fighter2=$f2->fetch_assoc();
 echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"];?> </p>
 <?php

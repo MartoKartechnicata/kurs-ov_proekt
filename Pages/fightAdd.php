@@ -10,16 +10,20 @@ try {
 } catch(PDOException $e) {
 	echo "Connection failed: " . $e->getMessage();
 }
+session_start();
 
 if ( isset( $_POST['submit'] ) ) {
 
 	// записване на данните от полетата в променливи за по-удобно
 
 
+
+  
 	$fighter1 = $_POST['fighter1'];
 	$fighter2 = $_POST['fighter2'];
 	$time = $_POST['time'];
 	$event = $_POST['event'];
+  $main=isset($_POST['main']);
 
 
 	$error = false;
@@ -50,13 +54,23 @@ if ( isset( $_POST['submit'] ) ) {
 		$error = true;
 	}
 
+  if (isset($_POST['main'])){
+    $stmt = $connection->prepare("SELECT * FROM fight join event on Event_id=event.id WHERE main=1 and event.id=?"); 
+        $stmt->execute([$event]); 
+	    $dup = $stmt->fetch();
+	if ($dup) {
+		echo "There's already a main event";
+		$error=true;
+	}
+  }
+
 	
 	
 	if ( !$error ) {
 
 		// INSERT заявка към базата, с която се записват полетата
 
-        $eventInsert="INSERT INTO fight ( fighter1id, fighter2id, time, event_id) VALUES ('$fighter1','$fighter2','$time', '$event')";
+        $eventInsert="INSERT INTO fight ( fighter1id, fighter2id, time, event_id,main) VALUES ('$fighter1','$fighter2','$time', '$event','$main')";
 		$result = mysqli_query($connection, $eventInsert);
 		
 		// изписва съобщение, че всичко е минало успешно
@@ -158,6 +172,8 @@ while ($row = $allFighters->fetch_assoc()){
 }
 ?>
         </select>
+        <label>Main:</label>
+        <input type="checkbox" id="main" name="main">
         <br>
         <div class="container-fluid text-center">
         <input class="btn btn-primary" type="submit" name="submit" value="Submit" style="width:30%">  

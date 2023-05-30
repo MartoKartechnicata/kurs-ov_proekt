@@ -10,6 +10,7 @@ try {
 } catch(PDOException $e) {
 	echo "Connection failed: " . $e->getMessage();
 }
+session_start();
 
 if ( isset( $_POST['submit'] ) ) {
 
