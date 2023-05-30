@@ -41,27 +41,9 @@ session_start();
 $allEvents = mysqli_query($connection, "SELECT * FROM event");
 if ( isset( $_POST['submit'] ) ) {
     $event=$_POST['submit'];
-
-    $allFights = mysqli_query($connection, "SELECT * from fight");
-    $allFighters = mysqli_query($connection, "select * from fighter");
     $_SESSION["event_id"]=$event;
-    echo $_SESSION["event_id"];
-?>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Events</title>
-	  
-  </head>
-  <body>
-    <p><?php echo $event ?></p>
-    <br>
-    <a href="tickets.php">Buy tickets</a>
-  </body>
-</html>
-<?php
-} else {
+    header("Location: eventInfo.php");
+}
 ?>
 <html lang="en">
   <head>
@@ -76,8 +58,23 @@ if ( isset( $_POST['submit'] ) ) {
   <?php 
 
 while ($row = $allEvents->fetch_assoc()){
-  
-/*$ef=mysqli_query($connection, "Select fight.* from fight join event on Event_id=event.id where event.id='{$row['id']}'");
+
+  ?>
+<button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button><br>
+<?php
+// close while loop 
+}
+?>
+    </form>
+    <br>
+<footer>
+      <?php 
+      include "../components/footer.html" 
+      ?>
+    </footer>
+    </body>
+</html>
+<?php /* $ef=mysqli_query($connection, "Select fight.* from fight join event on Event_id=event.id where event.id='{$row['id']}'");
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	  <div class="carousel-inner">
       <?php
@@ -102,16 +99,10 @@ while ($row = $allEvents->fetch_assoc()){
 	  </button>
 	</div>	*/
   ?>
-<button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button><br>
-<?php
-// close while loop 
-}
-?>
     </form>
     <br>
 <?php
 // close while loop 
-}
 ?>
 <footer>
       <?php 
