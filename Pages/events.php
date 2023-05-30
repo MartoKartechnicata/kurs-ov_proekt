@@ -59,8 +59,23 @@ if ( isset( $_POST['submit'] ) ) {
   <?php 
 
 while ($row = $allEvents->fetch_assoc()){
-  
-/*$ef=mysqli_query($connection, "Select fight.* from fight join event on Event_id=event.id where event.id='{$row['id']}'");
+
+  ?>
+<button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button><br>
+<?php
+// close while loop 
+}
+?>
+    </form>
+    <br>
+<footer>
+      <?php 
+      include "../components/footer.html" 
+      ?>
+    </footer>
+    </body>
+</html>
+<?php /* $ef=mysqli_query($connection, "Select fight.* from fight join event on Event_id=event.id where event.id='{$row['id']}'");
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	  <div class="carousel-inner">
       <?php
@@ -83,23 +98,4 @@ while ($row = $allEvents->fetch_assoc()){
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
 		<span class="visually-hidden">Next</span>
 	  </button>
-	</div>	*/
-  ?>
-<button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button><br>
-<?php
-// close while loop 
-}
-?>
-    </form>
-    <br>
-<?php
-// close while loop 
-?>
-<footer>
-      <?php 
-      include "../components/footer.html" 
-      ?>
-    </footer>
-    </body>
-</html>
-    
+	</div>	*/ ?>
