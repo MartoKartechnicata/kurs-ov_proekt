@@ -33,9 +33,7 @@ session_start();
     include "../components/header.html" 
     ?>
     </header>
-</body>
 
-</html>
 <?php
 
 $allEvents = mysqli_query($connection, "SELECT * FROM event");
@@ -45,14 +43,6 @@ if ( isset( $_POST['submit'] ) ) {
     header("Location: eventInfo.php");
 }
 ?>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Event</title>
-	  
-  </head>
-  <body>
 
   <form method="POST">
   <?php 
@@ -67,7 +57,7 @@ while ($row = $allEvents->fetch_assoc()){
 ?>
     </form>
     <br>
-<footer>
+      <footer>
       <?php 
       include "../components/footer.html" 
       ?>
@@ -98,16 +88,3 @@ while ($row = $allEvents->fetch_assoc()){
 		<span class="visually-hidden">Next</span>
 	  </button>
 	</div>	*/
-  ?>
-    </form>
-    <br>
-<?php
-// close while loop 
-?>
-<footer>
-      <?php 
-      include "../components/footer.html" 
-      ?>
-    </footer>
-    </body>
-</html>
