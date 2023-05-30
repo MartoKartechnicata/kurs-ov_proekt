@@ -10,6 +10,7 @@ try {
 } catch(PDOException $e) {
 	echo "Connection failed: " . $e->getMessage();
 }
+$error=false;
 
 session_start();
 ?>
@@ -49,12 +50,27 @@ if ( isset( $_POST['submit'] ) ) {
   <?php 
 
 while ($row = $allEvents->fetch_assoc()){
-
-  ?>
-<img src="../images/<?php echo $row[picture_name]?>" alt="USF logo">
+  $main=mysqli_query($connection, "Select fight.id from fight join event on fight.Event_id=event.id where event.id='{$row["id"]}' and main=1");
+  $mainEvent=$main->fetch_assoc();
+  if(!$mainEvent){?>
+    <br><button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button>
+    <?php
+    echo "No main event";
+  } else{
+  // $mainEvent e celiq red s main eventa
+  $f1=mysqli_query($connection, "Select * from fighter join fight on fighter1id=fighter.id 
+  where fight.id='{$mainEvent["id"]}'");
+$fighter1=$f1->fetch_assoc();
+// $fighter1 e celiq red
+$f2=mysqli_query($connection, "Select * from fighter join fight on fighter2id=fighter.id 
+where fight.id='{$mainEvent["id"]}'");
+$fighter2=$f2->fetch_assoc();
+echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"];?> 
+<img src="../images/<?php echo $fighter1['picture_name']?>" alt="USF logo">
 <button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button><br>
 <?php
 // close while loop 
+  }
 }
 ?>
     </form>
@@ -91,3 +107,4 @@ while ($row = $allEvents->fetch_assoc()){
 		<span class="visually-hidden">Next</span>
 	  </button>
 	</div>	*/
+  ?>
