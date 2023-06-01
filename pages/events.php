@@ -35,7 +35,7 @@ session_start();
     ?>
     </header>
     <main>
-
+      <h1 class="events-header1">Events</h1>
 <?php
 
 $allEvents = mysqli_query($connection, "SELECT * FROM event");
@@ -65,27 +65,33 @@ $f2=mysqli_query($connection, "Select * from fighter join fight on fighter2id=fi
 where fight.id='{$mainEvent["id"]}'");
 $fighter2=$f2->fetch_assoc();
 //echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"]; ?> 
-<div class="container events-container">
+<div class="container events-container ">
   <div class="row">
+    <div class="col-lg-3">
+    <img src="../images/<?php echo $fighter1['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter1["firstName"]." ".$fighter1["lastName"]?>">
+    </div>
     <div class="col text-center">
       <h3><?php echo $row['name'] ?> </h3><br>
       <h4><?php echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"];?> </h4>
+      <form method="POST" class="event-buttons">
+      <button type="button" class="btn btn-outline-danger" onclick="window.location.href = 'eventInfo.php';">Learn More</button>
+      <button type="button" class="btn btn-outline-primary" onclick="window.location.href = 'tickets.php';">Book Tickets</button>
+
+      </form>
+    </div>
+    <div class="col-lg-3 fighter-2-align">
+    <img src="../images/<?php echo $fighter2['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter2["firstName"]." ".$fighter2["lastName"]?>">
     </div>
   </div>
 </div>
 
-<img src="../images/<?php echo $fighter1['picture_name']?>" class="events-fighter-picture" alt="USF logo">
-<img src="../images/<?php echo $fighter2['picture_name']?>" class="events-fighter-picture" alt="USF logo">
-<form method="POST">
-<button type="submit" value="<?php echo $row['id'] ?>" name="submit">"<?php echo $row['name'] ?>"</button>
-</form>
 <?php
 // close while loop 
   }
 }
 ?>
     
-</main style="padding-bottom:60%;">
+</main>
     <br>
     <footer class="position-static bottom-0 start-0 end-0">
       <?php 
