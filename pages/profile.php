@@ -69,70 +69,16 @@ session_start();
 <br><br>
 <!-- mask -->
 <div class="mask" style="background-color: hsla(0, 0%, 98%, 0.6); mask-size: 70%;">
-
-<!-- row -->
-<div class="row">
-        <!-- col-->
-        <div class="col text-center">
-            <h2>Profile information</h2>
-        </div>
-<!-- /col -->
-<!-- col-->
-<div class="col text-center" style="border-left: 2px solid black;">
-            <h2>Tickets</h2>
-        </div>
-<!-- /col -->
-
-</div>
-<!-- /row -->     
-
-<!-- row -->
-<div class="row border-between">
-<!-- SECOND ROW col-->
-<div class="col">
-
-    <!-- row -->
-<div class="row">
-<!-- col-->
-<div class="col">
-    <p class="profile-text">First name:<?php echo $_SESSION['firstName']?></p>
-    </div>
-<!-- /col -->
-<!-- col-->
-<div class="col" style="text-align:right; font-size:large">
-    <p>Last name:<?php echo $_SESSION['lastName']?></p>
-    </div>
-<!-- /col -->
-<!-- row -->
-<div class="row">
-    <!-- col-->
-<div class="col" >
-<button style="width:20%" type="button" class="btn btn-outline-primary" onclick="window.location.href = 'passwordChange.php';">Change password</button>
-</div>
-<!-- /col -->
-</div>
-<!-- /row -->     
-
-</div>
-
-        </div>
-<!-- /row -->  
-
-<!-- SECOND ROW /col -->
-<!-- SECOND ROW col-->
-<div class="col text-center" style="border-left: 2px solid black;" >
-            <h2>Tickets</h2>
-        </div>
-<!-- SECOND ROW /col -->
-</div>
-<!-- /row -->  
-
-</div>
-  <!-- /mask -->
-</div>
-<!-- container -->
-  </div>
   <!-- /Background image -->
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="eventAdd.php">Profile info</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="profileTickets.php">Tickets</a>
+  </li>
+</ul>
+</div>
 </main>
 <footer class="position-static bottom-0 start-0 end-0">
       <?php 
