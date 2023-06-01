@@ -12,14 +12,15 @@ try {
 }
 
 session_start();
-// $title=mysqli_query($connection, "Select name from event where id='{$_SESSION["event_id"]}'");
+$title=mysqli_query($connection, "Select name from event where id='{$_SESSION["event_id"]}'");
+$title=$title->fetch_assoc();
 $allFights=mysqli_query($connection, "Select fight.id from fight join event on fight.Event_id=event.id where event.id='{$_SESSION["event_id"]}'");
 ?>
 <!doctype html>
 <html>
 
 <head>
-    <title>USF-Event Info</title>
+    <title><?php Echo $title['name']; ?></title>
     <meta charset="UTF-8">
     <meta name="description" content="Events page of the USF - UKTC STUDENT FIGHTS">
     <meta name="keywords" content="usf, uktc, fights, mma, mma promotions">

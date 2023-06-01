@@ -15,7 +15,7 @@ if (!$connection) {
 
 session_start(); 
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if (isset($_POST['passwordO']) && isset($_POST['passwordN']) && isset($_POST['passwordNC'])) {
 
     function validate($data){
 
@@ -29,49 +29,43 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     }
 
-    $email = validate($_POST['email']);
-
-    $pass = validate($_POST['password']);
+    $OP = validate($_POST['passwordO']);
+    $NP = validate($_POST['passwordN']);
+    $CNP = validate($_POST['passwordNC']);
 
 
     $error = false;
 
-    if ( empty( $email ) ) {
+    if ( empty( $OP ) ) {
 
         $error = true;
-        echo "Please, type email<br>";
+        echo "Please, type your old password<br>";
     }
 
-    if ( empty( $pass ) ) {
+    if ( empty( $NP ) ) {
 
         $error = true;
-        echo "Please, type pass<br>";
+        echo "Please, type a new password<br>";
     }
+
+    if($CNP!=$NP){
+		echo "<center style='color:red;'>The passwords do not match</center>";
+		$error=true;
+	}
 
     if ( !$error ) {
 
         $stmt = $connection->prepare("SELECT * FROM user WHERE email = ?"); 
-        $stmt->execute([ $email]); 
+        $stmt->execute([$_SESSION['email']]); 
 	    $result = $stmt->fetch();
 
-        if (password_verify($pass, $result['password']) ) {
+        if (password_verify($OP, $result['password']) ) {
 
             $row = ($result);
-
-                echo "Logged in!";
-                $_SESSION['user_id'] = $row['id'];
-
-                $_SESSION['email'] = $row['email'];
-
-                $_SESSION['firstName'] = $row['firstName'];
-
-                $_SESSION['lastName'] = $row['lastName'];
-
-                $_SESSION['admin'] = $row['admin'];
-
-                header("Location: homepage.php");
-
-                exit();
+            $stmt = $connection->prepare("UPDATE `user` SET `password` = ? WHERE (`id` = ?)"); 
+            $stmt->execute([password_hash($NP, PASSWORD_DEFAULT), $row['id']]); 
+            echo "Password changed";
+            header("location: profile.php");
 
         }
         else{
@@ -79,8 +73,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         }
 
     }
-	$email = htmlspecialchars( $email, ENT_QUOTES );
-	$pass=htmlspecialchars($pass, ENT_QUOTES);
+	$OP = htmlspecialchars( $OP, ENT_QUOTES );
+	$NP=htmlspecialchars($NP, ENT_QUOTES);
 }
 
 
@@ -91,7 +85,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
 <!doctype html>
   <head>
-  <title>USF-Log in</title>
+  <title>USF-Change Password</title>
     <meta charset="UTF-8">
     <meta name="description" content="Log in page of the USF - UKTC STUDENT FIGHTS">
     <meta name="keywords" content="usf, uktc, fights, register, information, mma, mma promotions">
@@ -128,31 +122,39 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 <div class="container-fluid border-container-form form-color">
 <div class="row register-form-heading">
 <div class="d-md-block d-none">
-    <h2 style="text-align:center">Sign In</h2>
+    <h2 style="text-align:center">Change password</h2>
 </div>
 <div class="d-md-none d-block">
-    <h1 style="text-align:center;padding-top:2%">SIGN IN</h1>
+    <h1 style="text-align:center;padding-top:2%">Change password</h1>
 </div>
 </div>
 <div class="row form-rows"  style="padding-top:2%;">
     <div class="col">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInputGrid" name="email" placeholder="Email address">
-        <label for="floatingInputGrid">Email address</label>
+        <input type="text" class="form-control" id="passwordO" name="passwordO" placeholder="Old Password">
+        <label for="passwordO">Old Password</label>
+      </div>
+    </div>
+</div>
+<div class="row form-rows">
+    <div class="col">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="passwordN" name="passwordN" placeholder="New Password">
+        <label for="passwordN">New Password</label>
       </div>
     </div>
 </div>
 <div class="row last-row">
     <div class="col">
         <div class="form-floating">
-            <input type="text" class="form-control" id="password" name="password" placeholder="Password">
-            <label for="password">Password</label>
+            <input type="text" class="form-control" id="passwordNC" name="passwordNC" placeholder="New Password">
+            <label for="passwordNC">Confirm New Password:</label>
         </div>
     </div>
 </div>
 <div class="row" style="text-align:center; padding-bottom:2%;">
     <div class="col">
-       <input class="btn btn-danger btn-danger-submit" type="submit" name="submit" value="Log in">  
+       <input class="btn btn-danger btn-danger-submit" type="submit" name="submit" value="Change password">  
     </div>
 </div>  
 </div>
@@ -164,4 +166,3 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
       ?>
     </footer>
 </body>
-</html>

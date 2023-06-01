@@ -85,7 +85,7 @@ $fighter2=$f2->fetch_assoc();
 }
 ?>
     
-</main>
+</main style="padding-bottom:60%;">
     <br>
       <footer>
       <?php 
