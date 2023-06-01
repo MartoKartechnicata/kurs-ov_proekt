@@ -16,6 +16,10 @@ main{
     height:100%;
 }
 
+.profile-text{
+    font-size: large;
+}
+
 .italicText{
     font-style: italic;
 }
@@ -54,6 +58,11 @@ main{
 h3.crimsonbg {
     background-color: crimson;
 }
+
+.crimsontext{
+    color:crimson;
+}
+
 .about-account{
     color:black;
     opacity: 80%;
@@ -116,7 +125,6 @@ font-size:1.25rem;
     border-color: black;
     border-width: 1.75px;
 }
-
 
 footer{
     background-color:gainsboro;
@@ -330,6 +338,6 @@ footer{
         padding-top:2%
     }
     img.hgh{
-        height: 300;
+        height: 300px;
     }
 }

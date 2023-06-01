@@ -29,7 +29,7 @@ session_start();
   <h1 class="text-center aboutus-title">About us</h1>
   <hr noshade style="color:crimson; margin-top:0px">
 
-  <div class="container-fluid">
+  <div class="container-fluid" >
   <div class="d-lg-block d-none">
     <div class="row">
         <div class="col-lg-7">
