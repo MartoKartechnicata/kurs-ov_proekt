@@ -12,6 +12,7 @@ try {
 }
 
 session_start();
+$_SESSION['event_id']=$_GET['role'];
 $title=mysqli_query($connection, "Select name from event where id='{$_SESSION["event_id"]}'");
 $title=$title->fetch_assoc();
 $allFights=mysqli_query($connection, "Select fight.id from fight join event on fight.Event_id=event.id where event.id='{$_SESSION["event_id"]}'");

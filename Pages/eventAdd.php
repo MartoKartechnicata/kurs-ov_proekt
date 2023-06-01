@@ -19,7 +19,10 @@ if ( isset( $_POST['submit'] ) ) {
 	$name = $_POST['name'];
 	$place = $_POST['place'];
 	$date = $_POST['date'];
-	$price = $_POST['price'];
+	$categoryA = $_POST['categoryA'];
+	$categoryB = $_POST['categoryB'];
+	$categoryC = $_POST['categoryC'];
+	$vip = $_POST['vip'];
 
 
 	$error = false;
@@ -43,11 +46,11 @@ if ( isset( $_POST['submit'] ) ) {
 		$error = true;
 	}
 	
-	if ( !$price ) {
+	if ( !$categoryA || !$categoryB || !$categoryC || !$vip ) {
 		echo "<center style='color:red;'>Въведете цена на билиетите за събитието</center>";
 		$error = true;
 	}
-  if ( $price<0 ) {
+  if ( $categoryA<0 || $categoryB<0 || $categoryC<0 || $vip<0) {
 		echo "<center style='color:red;'>Цената не може да е по-малко от 0</center>";
 		$error = true;
 	}
@@ -58,13 +61,17 @@ if ( isset( $_POST['submit'] ) ) {
 	if ( !$error ) {
 
 		// INSERT заявка към базата, с която се записват полетата
-
-        $eventInsert="INSERT INTO event (name,date,place,ticketPrice) VALUES ('$name','$date','$place','$price')";
+		$id1 = mysqli_query($connection, "Select event.id from event where id=(SELECT max(id))");
+		$id1=$id1->fetch_assoc();
+		$id1=$id1['id'];
+        $eventInsert="INSERT INTO event (name,date,place) VALUES ('$name','$date','$place')";
 		$result = mysqli_query($connection, $eventInsert);
+		$eventInsert2="INSERT INTO price (event_id,categoryA,categoryB,categoryC,VIPexperience) VALUES ('$id1','$categoryA','$categoryB','$categoryC','$vip')";
+		$result2 = mysqli_query($connection, $eventInsert2);
 		
 		// изписва съобщение, че всичко е минало успешно
 		
-		if ( $result ) {
+		if ( $result || $result2) {
 			echo "<center style='color:green;'>Събитието е добавено успешно</center>";
 		}
 	}
@@ -95,6 +102,7 @@ if ( isset( $_POST['submit'] ) ) {
       include "../components/header.html" 
       ?>
     </header>
+	<div class="container-fluid">
   <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="eventAdd.php">Add an event</a>
@@ -113,12 +121,30 @@ if ( isset( $_POST['submit'] ) ) {
     <label>Place:</label>
     <input type="text" name="place" class="form-control">
     <br>
-	<label>Ticket price:</label>
-	<input type="number" name="price" class="form-control">
+	<label>Ticket prices:</label>
+	<div class="row">
+		<div class="col">
+		<label>Category A:</label>
+	<input type="number" name="categoryA" class="form-control">
+</div>
+<div class="col">
+<label>Category B:</label>
+	<input type="number" name="categoryB" class="form-control">
+</div>
+<div class="col">
+<label>Category C:</label>
+	<input type="number" name="categoryC" class="form-control">
+</div>
+<div class="col">
+<label>VIP Experience:</label>
+	<input type="number" name="vip" class="form-control">
+</div>
+</row>
 	<br>
     <label>Date:</label>
         <input type="date" name="date" class="form-control">
         <br>
+</div>
 	
         <br>
         <div class="container-fluid text-center">

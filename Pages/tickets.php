@@ -12,6 +12,7 @@ try {
 }
 
 session_start();
+$_SESSION['event_id']=$_GET['role'];
 
 $p=mysqli_query($connection, "Select ticketPrice from event where event.id='{$_SESSION['event_id']}'");
 $p2=$p->fetch_assoc();
