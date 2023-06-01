@@ -66,8 +66,10 @@ echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstNam
 ?>
     </form>
     <br>
+    <footer class="position-static bottom-0 start-0 end-0">
       <?php 
       include "../components/footer.html" 
       ?>
+    </footer>
     </body>
 </html>

@@ -134,10 +134,10 @@ session_start();
   </div>
   <!-- /Background image -->
 </main>
-<footer>
+<footer class="position-static bottom-0 start-0 end-0">
       <?php 
       include "../components/footer.html" 
       ?>
-    </footer>
+</footer>
 </body>
 </html>

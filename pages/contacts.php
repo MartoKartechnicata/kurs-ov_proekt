@@ -47,9 +47,11 @@ session_start();
       </div>
     </div>
   </main>
+  <footer class="position-fixed bottom-0 start-0 end-0">
       <?php 
       include "../components/footer.html" 
       ?>
+</footer>
 </body>
 
 </html>

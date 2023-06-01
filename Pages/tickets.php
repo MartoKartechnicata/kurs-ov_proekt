@@ -62,8 +62,10 @@ $price=$p2['ticketPrice'];
     <input class="btn btn-success" type="submit" name="submit" value="Book tickets">  
 </form>
 <?php } ?>
+<footer class="position-static bottom-0 start-0 end-0">
       <?php 
       include "../components/footer.html" 
       ?>
+</footer>
 </body>
 </html>
