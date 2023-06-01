@@ -180,10 +180,5 @@ while ($row = $allFighters->fetch_assoc()){
 </div>
     </form>
     <br>
-	<footer>
-      <?php 
-      include "../components/footer.html" 
-      ?>
-    </footer>
   </body>
 </html>

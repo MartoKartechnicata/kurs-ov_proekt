@@ -87,11 +87,9 @@ $fighter2=$f2->fetch_assoc();
     
 </main style="padding-bottom:60%;">
     <br>
-      <footer>
       <?php 
       include "../components/footer.html" 
       ?>
-    </footer>
     </body>
 </html>
 <?php /* $ef=mysqli_query($connection, "Select fight.* from fight join event on Event_id=event.id where event.id='{$row['id']}'");

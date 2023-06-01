@@ -45,12 +45,11 @@ session_start();
     <button type="button" class="btn btn-danger" onclick="window.location.href = '../components/logout.php';">Log Out</button>
         <p>text</p>
     </main>
-
-    <footer>
+    
       <?php 
       include "../components/footer.html" 
       ?>
-    </footer>
+    
 </body>
 
 </html>

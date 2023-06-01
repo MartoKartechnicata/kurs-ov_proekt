@@ -47,12 +47,9 @@ session_start();
       </div>
     </div>
   </main>
-  
-    <footer>
       <?php 
       include "../components/footer.html" 
       ?>
-    </footer>
 </body>
 
 </html>

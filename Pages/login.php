@@ -158,10 +158,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 </div>
 </form>
 </main>
-	<footer>
       <?php 
       include "../components/footer.html" 
       ?>
-    </footer>
 </body>
 </html>

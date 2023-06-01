@@ -139,10 +139,8 @@ session_start();
     </div>
 </div>
 </div>
-    <footer>
       <?php 
       include "../components/footer.html" 
       ?>
-    </footer>
 </body>
 </html>

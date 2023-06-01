@@ -153,10 +153,5 @@ if ( isset( $_POST['submit'] ) ) {
 </div>
     </form>
     <br>
-	<footer>
-      <?php 
-      include "../components/footer.html" 
-      ?>
-    </footer>
   </body>
 </html>

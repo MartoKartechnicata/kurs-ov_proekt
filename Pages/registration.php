@@ -277,11 +277,9 @@ if ( isset( $_POST['submit'] ) ) {
 </form>
 </main>
 
-   <footer>
       <?php 
       include "../components/footer.html" 
       ?>
-    </footer>
 
   </body>
 </html>
