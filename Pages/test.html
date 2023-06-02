@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <style>
+    /* CSS styles for the profile page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+h1 {
+  text-align: center;
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.profile-field {
+  margin-bottom: 10px;
+}
+
+.profile-field label {
+  font-weight: bold;
+}
+
+.profile-field span {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.profile-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-button:hover {
+  background-color: #45a049;
+}
+ </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h1>User Profile</h1>
+    <form>
+      <div class="profile-field">
+        <label for="firstName">First Name:</label>
+        <span id="firstName">John</span>
+      </div>
+      <div class="profile-field">
+        <label for="lastName">Last Name:</label>
+        <span id="lastName">Doe</span>
+      </div>
+      <div class="profile-field">
+        <label for="email">Email:</label>
+        <span id="email">johndoe@example.com</span>
+      </div>
+      <div class="profile-field">
+        <label for="password">Password:</label>
+        <span id="password">*********</span>
+      </div>
+      <div class="profile-button-container">
+        <button class="profile-button" type="button">Edit Profile</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

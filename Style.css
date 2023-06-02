@@ -13,6 +13,35 @@ main{
     height:100%;
 }
 
+
+.blackbg {
+    background-color: black;
+}
+.crimsonbg {
+    background-color: crimson;
+}
+
+div.kutiqGreen{
+    border: 1px solid green;
+   padding: 25px;
+}
+
+.greentext{
+    color:green;
+}
+
+.greenbg{
+    background-color: green;
+}
+
+.crimsontext{
+    color:crimson;
+}
+
+.antiquewhitetext{
+color: antiquewhite;
+}
+
 .profile-text{
     font-size: large;
 }
@@ -50,14 +79,6 @@ main{
 .register-form-heading{
     color:crimson;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-h3.crimsonbg {
-    background-color: crimson;
-}
-
-.crimsontext{
-    color:crimson;
 }
 
 .about-account{
@@ -121,6 +142,10 @@ font-size:1.25rem;
     color:black;
     border-color: black;
     border-width: 1.75px;
+}
+div.kutiqRed{
+     border: 1px solid crimson;
+    padding: 25px;
 }
 
 footer{

@@ -74,8 +74,8 @@ $fighter2=$f2->fetch_assoc();
       <h3><?php echo $row['name'] ?> </h3><br>
       <h4><?php echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"];?> </h4>
       <form method="GET" class="event-buttons">
-      <a class="btn btn-outline-danger" href="eventInfo.php?role=<?php echo $row['id'] ?>">Learn More</a>
-      <a class="btn btn-outline-primary" href="tickets.php?role=<?php echo $row['id'] ?>">Book Tickets</a>
+      <a class="btn btn-outline-danger" href="eventInfo.php?event=<?php echo $row['id'] ?>">Learn More</a>
+      <a class="btn btn-outline-primary" href="ticketsBuy.php?event=<?php echo $row['id'] ?>">Book Tickets</a>
       </form>
     </div>
     <div class="col-lg-3 fighter-2-align">

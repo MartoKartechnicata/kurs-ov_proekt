@@ -50,10 +50,6 @@ if ( isset( $_POST['submit'] ) ) {
 		echo "<center style='color:red;'>Въведете цена на билиетите за събитието</center>";
 		$error = true;
 	}
-  if ( $categoryA<0 || $categoryB<0 || $categoryC<0 || $vip<0) {
-		echo "<center style='color:red;'>Цената не може да е по-малко от 0</center>";
-		$error = true;
-	}
 	// изписване на грешка ако не е попълнена цена
 
 	
@@ -121,25 +117,25 @@ if ( isset( $_POST['submit'] ) ) {
     <label>Place:</label>
     <input type="text" name="place" class="form-control">
     <br>
-	<label>Ticket prices:</label>
+	<h3>Ticket prices:</h3>
 	<div class="row">
 		<div class="col">
 		<label>Category A:</label>
-	<input type="number" name="categoryA" class="form-control">
+	<input type="number" name="categoryA" class="form-control" min="0">
 </div>
 <div class="col">
 <label>Category B:</label>
-	<input type="number" name="categoryB" class="form-control">
+	<input type="number" name="categoryB" class="form-control" min="0">
 </div>
 <div class="col">
 <label>Category C:</label>
-	<input type="number" name="categoryC" class="form-control">
+	<input type="number" name="categoryC" class="form-control" min="0">
 </div>
 <div class="col">
 <label>VIP Experience:</label>
-	<input type="number" name="vip" class="form-control">
+	<input type="number" name="vip" class="form-control" min="0">
 </div>
-</row>
+</div>
 	<br>
     <label>Date:</label>
         <input type="date" name="date" class="form-control">

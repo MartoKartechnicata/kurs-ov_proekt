@@ -72,7 +72,7 @@ session_start();
   <!-- /Background image -->
   <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="eventAdd.php">Profile info</a>
+    <a class="nav-link active" aria-current="page" href="profile.php">Profile info</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="profileTickets.php">Tickets</a>
