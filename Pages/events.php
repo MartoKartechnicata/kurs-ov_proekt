@@ -64,6 +64,10 @@ $fighter1=$f1->fetch_assoc();
 $f2=mysqli_query($connection, "Select * from fighter join fight on fighter2id=fighter.id 
 where fight.id='{$mainEvent["id"]}'");
 $fighter2=$f2->fetch_assoc();
+$eventNumber=mysqli_query($connection, "SELECT name, SUBSTRING(name ,5,2) FROM kp.event where event.id={$row['id']};");
+$eventNumber=$eventNumber->fetch_assoc();
+$eventNumber=$eventNumber['SUBSTRING(name ,5,2)'];
+
 //echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"]; ?> 
 <div class="container events-container ">
   <div class="row">
@@ -71,7 +75,8 @@ $fighter2=$f2->fetch_assoc();
     <img src="../images/<?php echo $fighter1['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter1["firstName"]." ".$fighter1["lastName"]?>">
     </div>
     <div class="col text-center">
-      <h3><?php echo $row['name'] ?> </h3><br>
+      <img src="../images/logo1.png" alt="USF logo" style="height: 90px;" >
+      <h3><?php echo $eventNumber?></h3>
       <h4><?php echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"];?> </h4>
       <form method="GET" class="event-buttons">
       <a class="btn btn-outline-danger" href="eventInfo.php?event=<?php echo $row['id'] ?>">Learn More</a>
