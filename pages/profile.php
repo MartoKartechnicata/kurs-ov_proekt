@@ -78,7 +78,9 @@ session_start();
     <a class="nav-link" href="profileTickets.php">Tickets</a>
   </li>
 </ul>
+<button style="width:10%" type="button" class="btn btn-outline-primary" onclick="window.location.href = 'passwordChange.php';">Change password</button>
 </div>
+
 </main>
 <footer class="position-static bottom-0 start-0 end-0">
       <?php 
