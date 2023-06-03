@@ -11,10 +11,6 @@ try {
 	echo "Connection failed: " . $e->getMessage();
 }
 session_start();
-// echo $_SESSION['firstName'];
-//<a href="http://programminghead.com">  
-//<button>Click Me</button>  
-//</a>
 ?>
 <!DOCTYPE html>
 
@@ -69,7 +65,6 @@ session_start();
 <br><br>
 <!-- mask -->
 <div class="mask" style="background-color: hsla(0, 0%, 98%, 0.6); mask-size: 70%;">
-  <!-- /Background image -->
   <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="profile.php">Profile info</a>
@@ -78,8 +73,31 @@ session_start();
     <a class="nav-link" href="profileTickets.php">Tickets</a>
   </li>
 </ul>
-<button style="width:10%" type="button" class="btn btn-outline-primary" onclick="window.location.href = 'passwordChange.php';">Change password</button>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h3>User Profile</h3>
+          </div>
+          <div class="card-body">
+            <div class="col">
+            <p class="textSize-profile"><strong>First name:</strong> <?php echo $_SESSION['firstName']?></p> 
+            <p class="textSize-profile"><strong>Last Name:</strong> <?php echo $_SESSION['lastName']?></p>
+            <p class="textSize-profile"><strong>Email:</strong> <?php echo $_SESSION['email']?></p>
+            </div>
+            <div class="col offset-10">
+            <button style="width:49%" type="button" class="btn btn-outline-primary" onclick="window.location.href = 'passwordChange.php';">Change password</button>
+            <button style="width:49%" type="button" class="btn btn-outline-danger" onclick="window.location.href = 'profileDelete.php';">Delete account</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
 </div>
+<!-- /mask -->
+</div>
+<!-- /container -->
 
 </main>
 <footer class="position-static bottom-0 start-0 end-0">

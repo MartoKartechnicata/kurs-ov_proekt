@@ -14,6 +14,9 @@ main{
 }
 
 
+.textSize-profile{
+    font-size: large;
+}
 .blackbg {
     background-color: black;
 }

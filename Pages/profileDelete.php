@@ -11,7 +11,20 @@ try {
 	echo "Connection failed: " . $e->getMessage();
 }
 session_start();
-$accountTickets=mysqli_query($connection, "Select * from ticket where owner_id={$_SESSION['user_id']}");
+
+if ( isset( $_POST['submit'] ) ){
+    echo "zdr";
+    $password = $_POST['password'];
+    $sql = mysqli_query($connection, "SELECT * FROM user WHERE id = {$_SESSION['user_id']}");
+	    $r = $sql->fetch_assoc();
+
+        if (password_verify($password, $r['password']) ){
+            $result=mysqli_query($connection, "delete FROM user WHERE id = {$_SESSION['user_id']}");
+            if($result){
+                header("location: registration.php");
+            }
+        }
+}
 ?>
 <!DOCTYPE html>
 
@@ -66,38 +79,37 @@ $accountTickets=mysqli_query($connection, "Select * from ticket where owner_id={
 <br><br>
 <!-- mask -->
 <div class="mask" style="background-color: hsla(0, 0%, 98%, 0.6); mask-size: 70%;">
-  <!-- /Background image -->
   <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link" aria-current="page" href="profile.php">Profile info</a>
+    <a class="nav-link active" aria-current="page" href="profile.php">Profile info</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="profileTickets.php">Tickets</a>
+    <a class="nav-link" href="profileTickets.php">Tickets</a>
   </li>
 </ul>
-<div class="row">
+    <div class="row">
       <div class="col">
         <div class="card">
           <div class="card-header">
-            <h3>Tickets</h3>
+            <h3>Delete account</h3>
           </div>
           <div class="card-body">
-<?php 
-while ($row = $accountTickets->fetch_assoc()){ 
-    $event=mysqli_query($connection, "Select event.* from event join ticket on event.id=eventId where event.id={$row['eventId']}");
-    $event=$event->fetch_assoc(); 
-    ?>
-<p>Event:<?php echo $event['name'];?> Date:<?php echo $event['date'];?> Ticket Type:<?php echo $row['type'];?></p>
-<?php
-}
-?>
-</div>
-</div>
-</div>
-</div>
+          <form method="POST">
+          <label>Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            <br>
+            <input class="btn btn-danger" type="submit" name="submit" value="Delete Account" style="width:20%"> 
+</form>
+          </div>
+          </div>
+        </div>
+      </div>
 
 </div>
+<!-- /mask -->
 </div>
+<!-- /container -->
+
 </main>
 <footer class="position-static bottom-0 start-0 end-0">
       <?php 
