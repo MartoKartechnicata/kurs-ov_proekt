@@ -131,7 +131,7 @@ if (isset($_POST['passwordO']) && isset($_POST['passwordN']) && isset($_POST['pa
 <div class="row form-rows"  style="padding-top:2%;">
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="passwordO" name="passwordO" placeholder="Old Password">
+        <input type="password" class="form-control" id="passwordO" name="passwordO" placeholder="Old Password">
         <label for="passwordO">Old Password</label>
       </div>
     </div>
@@ -139,7 +139,7 @@ if (isset($_POST['passwordO']) && isset($_POST['passwordN']) && isset($_POST['pa
 <div class="row form-rows">
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="passwordN" name="passwordN" placeholder="New Password">
+        <input type="password" class="form-control" id="passwordN" name="passwordN" placeholder="New Password">
         <label for="passwordN">New Password</label>
       </div>
     </div>
@@ -147,7 +147,7 @@ if (isset($_POST['passwordO']) && isset($_POST['passwordN']) && isset($_POST['pa
 <div class="row last-row">
     <div class="col">
         <div class="form-floating">
-            <input type="text" class="form-control" id="passwordNC" name="passwordNC" placeholder="New Password">
+            <input type="password" class="form-control" id="passwordNC" name="passwordNC" placeholder="New Password">
             <label for="passwordNC">Confirm New Password:</label>
         </div>
     </div>

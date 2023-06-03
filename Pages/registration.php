@@ -244,13 +244,13 @@ if ( isset( $_POST['submit'] ) ) {
     <div class="col">
     <div class="d-md-block d-none">
         <div class="form-floating">
-            <input type="text" class="form-control" id="password" name="password" placeholder="Password">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
             <label for="password">Password</label>
         </div>
     </div>
     <div class="d-md-none d-block">
     <label class="label-mobile" for="password">Password: </label>
-    <input type="text" class="form-control input-size" id="password" name="password2" placeholder="Password">
+    <input type="password" class="form-control input-size" id="password" name="password2" placeholder="Password">
     </div>
     </div>
 </div>
@@ -258,13 +258,13 @@ if ( isset( $_POST['submit'] ) ) {
     <div class="col">
     <div class="d-md-block d-none">
         <div class="form-floating">
-            <input type="text" class="form-control" id="passwordC" name="passwordC" placeholder="Confirm Password">
+            <input type="password" class="form-control" id="passwordC" name="passwordC" placeholder="Confirm Password">
             <label for="passwordC">Confirm Password</label>
         </div>
     </div>
     <div class="d-md-none d-block"> 
     <label class="label-mobile" for="passwordC">Confirm Password: </label>
-    <input type="text" class="form-control input-size" id="passwordC" name="passwordC2" placeholder="Confirm Password">
+    <input type="password" class="form-control input-size" id="passwordC" name="passwordC2" placeholder="Confirm Password">
     </div>
     </div>
 </div>
@@ -274,7 +274,9 @@ if ( isset( $_POST['submit'] ) ) {
     </div>
 </div>  
 </div>
+<p class="crimsontext">Already have an account? <a href="login.php">Login</a></p>
 </form>
+
 </main>
 
 <footer class="position-static bottom-0 start-0 end-0">

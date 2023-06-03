@@ -12,6 +12,9 @@ try {
 }
 
 session_start();
+if (empty($_SESSION['user_id'])) {
+  header("Location: registration.php");
+}
 $_SESSION['event_id']=$_GET['event'];
 $eventName=mysqli_query($connection,"Select name from event where id={$_SESSION['event_id']}");
 $eventName=$eventName->fetch_assoc();
