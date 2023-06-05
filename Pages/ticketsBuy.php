@@ -32,6 +32,12 @@ $categoryA = $p2['categoryA'];
     $qunatityB=$_POST['quantityB'];
     $qunatityC=$_POST['quantityC'];
     $qunatityVIP=$_POST['quantityVIP'];
+    $seats=mysqli_query($connection, "Select * from availableseats where event_id={$_SESSION['event_id']}");
+  $seats=$seats->fetch_assoc();
+  $catA=$seats['categoryA'];
+  $catB=$seats['categoryB'];
+  $catC=$seats['categoryC'];
+  $vip=$seats['vip'];
 
 
     $error=false;
@@ -45,20 +51,28 @@ $categoryA = $p2['categoryA'];
       for($i = 0; $i<$qunatityA; $i++){
         $sql1="insert into ticket(owner_id, eventid, type) values ({$_SESSION['user_id']}, {$_SESSION['event_id']}, 'Category A')";
         $result=mysqli_query($connection, $sql1);
-        echo 1;
+        $catA=$catA-1;
+        $st=mysqli_query($connection, "UPDATE availableseats SET categoryA = {$catA} WHERE event_id = {$_SESSION['event_id']}");
       }
       for($i=0; $i<$qunatityB; $i++){
         $sql2="insert into ticket(owner_id, eventid, type) values ({$_SESSION['user_id']}, {$_SESSION['event_id']}, 'Category B')";
         $result=mysqli_query($connection, $sql2);
+        $catB=$catB-1;
+        $st=mysqli_query($connection, "UPDATE availableseats SET `categoryB` = {$catB} WHERE event_id = {$_SESSION['event_id']}");
       }
       for($i=0; $i<$qunatityC; $i++){
         $sql3="insert into ticket(owner_id, eventid, type) values ({$_SESSION['user_id']}, {$_SESSION['event_id']}, 'Category C')";
         $result=mysqli_query($connection, $sql3);
+        $catC=$catC-1;
+        $st=mysqli_query($connection, "UPDATE availableseats SET `categoryC` = {$catC} WHERE event_id = {$_SESSION['event_id']}");
       }
       for($i=0; $i<$qunatityVIP; $i++){
         $sql4="insert into ticket(owner_id, eventid, type) values ({$_SESSION['user_id']}, {$_SESSION['event_id']}, 'VIP')";
         $result=mysqli_query($connection, $sql4);
+        $vip=$vip-1;
+        $st=mysqli_query($connection, "UPDATE availableseats SET `vip` = {$vip} WHERE event_id = {$_SESSION['event_id']}");
       }
+      header("location:eventinfo.php");
     } else{
       echo "error";
     }

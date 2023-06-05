@@ -57,17 +57,20 @@ if ( isset( $_POST['submit'] ) ) {
 	if ( !$error ) {
 
 		// INSERT заявка към базата, с която се записват полетата
-		$id1 = mysqli_query($connection, "Select event.id from event where id=(SELECT max(id))");
+		$id1 = mysqli_query($connection, "Select event.id from event where id=(SELECT max(event.id) from event)");
 		$id1=$id1->fetch_assoc();
-		$id1=$id1['id'];
+		$id1=$id1['id']+1;
         $eventInsert="INSERT INTO event (name,date,place) VALUES ('$name','$date','$place')";
 		$result = mysqli_query($connection, $eventInsert);
-		$eventInsert2="INSERT INTO price (event_id,categoryA,categoryB,categoryC,VIPexperience) VALUES ('$id1','$categoryA','$categoryB','$categoryC','$vip')";
-		$result2 = mysqli_query($connection, $eventInsert2);
+		
 		
 		// изписва съобщение, че всичко е минало успешно
 		
-		if ( $result || $result2) {
+		if ( $result) {
+			$eventInsert2="INSERT INTO price (event_id,categoryA,categoryB,categoryC,VIPexperience) VALUES ('$id1','$categoryA','$categoryB','$categoryC','$vip')";
+		$result2 = mysqli_query($connection, $eventInsert2);
+		$eventInsert3="INSERT INTO availableseats(event_id) values ('$id1')";
+		$eventInsert3=mysqli_query($connection,$eventInsert3);
 			echo "<center style='color:green;'>Събитието е добавено успешно</center>";
 		}
 	}
