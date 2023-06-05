@@ -238,21 +238,43 @@ footer{
   .events-container{
     border: 3px crimson solid;
     margin-bottom: 2%;
-    width: 71%;
+    width: 55%;
   }
   .events-fighter-picture{
-    height: 350px;
+    height: 270px;
     padding-top: 2%;
   }
   .fighter-2-align{
     text-align: end;
   }
-  .events-header1{
+  .events-header{
     text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   .event-buttons{
-    padding-top:23%;
+    padding-top:19%;
   }
+  .event-header{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    position: relative;
+    bottom:15px;
+    font-size: 100%;
+    color:black;
+  }
+.event-usf-picture{
+    height: 90px;
+}
+.main-event-text{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:black
+}
+.fighter-names{
+    color:crimson;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 @media screen and (min-width: 768px) {
     body{
