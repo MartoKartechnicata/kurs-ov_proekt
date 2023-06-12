@@ -53,7 +53,6 @@ $allFights=mysqli_query($connection, "Select fight.id from fight join event on f
   <?php 
 
 while ($row = $allFights->fetch_assoc()){
-
   ?>
 <p><?php
 $f1=mysqli_query($connection, "Select * from fighter join fight on fighter1id=fighter.id where fight.id='{$row["id"]}'");

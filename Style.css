@@ -236,23 +236,32 @@ footer{
   }
 
   .events-container{
-    border: 3px crimson solid;
+    margin-top:2%;
     margin-bottom: 2%;
-    width: 55%;
+    width: 100%;
+    border-bottom: 2px crimson solid;
+    position:relative;
   }
   .events-fighter-picture{
-    height: 270px;
-    padding-top: 2%;
+    height: 15rem;
   }
   .fighter-2-align{
     text-align: end;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
   }
   .events-header{
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:black;
   }
   .event-buttons{
-    padding-top:19%;
+    padding-top:5%;
+    padding-bottom:2%
   }
   .event-header{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -261,19 +270,20 @@ footer{
     bottom:15px;
     font-size: 100%;
     color:black;
+    opacity: 25%;
   }
 .event-usf-picture{
-    height: 90px;
-}
-.main-event-text{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color:black
+    height: 5rem;
+    padding-top: 2%;
+    opacity: 25%;
 }
 .fighter-names{
-    color:crimson;
+    color:black;
     font-family:Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 @media screen and (min-width: 768px) {
@@ -392,5 +402,35 @@ footer{
     }
     img.hgh{
         height: 300px;
+    }
+
+    .events-container{
+        border: 3px crimson solid;
+        margin-bottom: 2%;
+        width: 55%;
+        background-color: white;
+      }
+      .events-fighter-picture{
+        height: 270px;
+        padding-top: 2%;
+      }
+      
+      .event-buttons{
+        padding-top:19%;
+      }
+      .event-header{
+        position: relative;
+        bottom:15px;
+        font-size: 100%;
+        opacity: 100%;
+      }
+    .event-usf-picture{
+        height: 90px;
+        padding-top: 2%;
+        opacity: 100%;
+    }
+    .fighter-names{
+        font-size: 20px;
+        color:crimson;
     }
 }
