@@ -35,7 +35,7 @@ session_start();
     ?>
     </header>
     <main>
-      <h1 class="events-header">EVENTS</h1>
+      <h1 class="events-header">UPCOMING EVENTS</h1>
 <?php
 
 $allEvents = mysqli_query($connection, "SELECT * FROM event");
@@ -69,24 +69,44 @@ $eventNumber=$eventNumber->fetch_assoc();
 $eventNumber=$eventNumber['SUBSTRING(name ,5,2)'];
  ?> 
 <div class="container-fluid events-container ">
+<div class="d-md-block d-none">
   <div class="row">
-    <div class="col col-lg-3 order-2 order-lg-1">
+    <div class="col-3">
     <img src="../images/<?php echo $fighter1['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter1["firstName"]." ".$fighter1["lastName"]?>">
     </div>
-    <!--<div class="col-6 order-2 d-lg-none d-block text-center">
-    <h3><img class="event-usf-picture" src="../images/logo1.png" alt="USF logo"><span class="event-header"><?php echo $eventNumber?></span></h3>
-    </div>-->
-    <div class="col-12 col-lg-6 order-1 order-lg-2 text-center">
+    <div class="col-6 text-center">
       <h3><img class="event-usf-picture" src="../images/logo1.png" alt="USF logo"><span class="event-header"><?php echo $eventNumber?></span></h3>
       <p class="fighter-names"><?php echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"];?> </p>
-      <form method="GET" class="event-buttons d-lg-block d-none">
+      <form method="GET" class="event-buttons">
       <a class="btn btn-outline-danger" href="eventInfo.php?event=<?php echo $row['id'] ?>">Learn More</a>
       <a class="btn btn-outline-primary" href="ticketsBuy.php?event=<?php echo $row['id'] ?>">Book Tickets</a>
       </form>
     </div>
-    <div class="col-3 col-lg-3 order-3 order-lg-3 fighter-2-align">
+    <div class="col-3 fighter-2-align">
     <img src="../images/<?php echo $fighter2['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter2["firstName"]." ".$fighter2["lastName"]?>">
     </div>
+  </div>
+  </div>
+  <div class="d-block d-md-none">
+  <div class="row row-border text-center">
+    <div class="col ">
+      <p class="fighter-names"><?php echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"];?> </p>
+    </div>
+  </div>
+  <div class="row row-border event-background-mobile">
+    <div class="col">
+      <img src="../images/<?php echo $fighter1['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter1["firstName"]." ".$fighter1["lastName"]?>">
+    </div>
+    <div class="col fighter-2-align">
+      <img src="../images/<?php echo $fighter2['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter2["firstName"]." ".$fighter2["lastName"]?>">
+    </div>
+  </div>
+  <div class="row text-center">
+  <form method="GET" class="event-buttons">
+      <a class="btn btn-outline-danger" href="eventInfo.php?event=<?php echo $row['id'] ?>">Learn More</a>
+      <a class="btn btn-outline-primary" href="ticketsBuy.php?event=<?php echo $row['id'] ?>">Book Tickets</a>
+  </form>
+  </div>
   </div>
 </div>
 

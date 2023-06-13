@@ -238,13 +238,11 @@ footer{
   .events-container{
     margin-top:2%;
     margin-bottom: 2%;
-    width: 100%;
-    border-bottom: 2px crimson solid;
+    width: 75%;
+    border: 2px crimson solid;
     position:relative;
   }
-  .events-fighter-picture{
-    height: 15rem;
-  }
+  
   .fighter-2-align{
     text-align: end;
     -moz-transform: scaleX(-1);
@@ -256,36 +254,64 @@ footer{
   }
   .events-header{
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:Impact;
     color:black;
+    margin-top: 3%;
+    margin-bottom: 10%;
   }
   .event-buttons{
-    padding-top:5%;
+    padding-top:2%;
     padding-bottom:2%
   }
   .event-header{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     position: relative;
+    opacity: 100%;
     bottom:15px;
     font-size: 100%;
     color:black;
-    opacity: 25%;
   }
-.event-usf-picture{
+  .event-usf-picture{
     height: 5rem;
     padding-top: 2%;
-    opacity: 25%;
+    opacity: 100%;
 }
 .fighter-names{
+    text-decoration: none;
     color:black;
     font-family:Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1rem;
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
 
+.event-background-mobile{
+    position: relative;
+}
+
+.event-background-mobile:before{
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background-image: url('images/logo1.png');
+  background-position: center center;
+  background-size: 41%;
+}
+.events-fighter-picture{
+    position: relative;
+    height: 10rem;
+    text-align: center;
+  }
+
+  .row-border{
+    border-bottom: 2px crimson solid;
+  }
+  
 @media screen and (min-width: 768px) {
     body{
         min-height: 200vh;
@@ -309,7 +335,7 @@ footer{
     }
     
     .form-background{
-        background-image: url("../kurs-ov_proekt/images/background.jpg");
+        background-image: url("images/background.jpg");
         background-size:cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -364,6 +390,17 @@ footer{
         text-decoration: none;
         border-radius: 25%;
       }
+
+      .events-fighter-picture{
+        height: 10rem;
+      }
+
+      .events-header{
+        margin-top: 2%;
+        margin-bottom: 0%;
+        font-weight: normal;
+    }
+    
 }
 
 @media screen and (min-width: 992px) {
@@ -418,19 +455,13 @@ footer{
       .event-buttons{
         padding-top:19%;
       }
-      .event-header{
-        position: relative;
-        bottom:15px;
-        font-size: 100%;
-        opacity: 100%;
-      }
-    .event-usf-picture{
-        height: 90px;
-        padding-top: 2%;
-        opacity: 100%;
-    }
+    
     .fighter-names{
         font-size: 20px;
         color:crimson;
+    }
+
+    .event-usf-picture{
+        height: 6.8rem;
     }
 }
