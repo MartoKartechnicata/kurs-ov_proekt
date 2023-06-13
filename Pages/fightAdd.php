@@ -24,6 +24,7 @@ if ( isset( $_POST['submit'] ) ) {
 	$time = $_POST['time'];
 	$event = $_POST['event'];
   $main=isset($_POST['main']);
+  $wc=($_POST['wc']);
 
 
 	$error = false;
@@ -63,6 +64,10 @@ if ( isset( $_POST['submit'] ) ) {
 		$error=true;
 	}
   }
+  if ( !$wc ) {
+		echo "<center style='color:red;'>Попълнете категория</center>";
+		$error = true;
+	}
 
 	
 	
@@ -70,7 +75,7 @@ if ( isset( $_POST['submit'] ) ) {
 
 		// INSERT заявка към базата, с която се записват полетата
 
-        $eventInsert="INSERT INTO fight ( fighter1id, fighter2id, time, event_id,main) VALUES ('$fighter1','$fighter2','$time', '$event','$main')";
+        $eventInsert="INSERT INTO fight ( fighter1id, fighter2id, time, event_id,main, weight_class) VALUES ('$fighter1','$fighter2','$time', '$event','$main','$wc')";
 		$result = mysqli_query($connection, $eventInsert);
 		
 		// изписва съобщение, че всичко е минало успешно
@@ -172,6 +177,18 @@ while ($row = $allFighters->fetch_assoc()){
 }
 ?>
         </select>
+        <label>Weight class:</label>
+        <select class="form-control" name="wc">
+        <option value="Strawweight">Strawweight</option>
+        <option value="Flyweight">Flyweight</option>
+        <option value="Bantamweight">Bantamweight</option>
+        <option value="Featherweight">Featerweight </option>
+        <option value="Lightweight">Lightweight</option>
+        <option value="Welterweight">Welterweight</option>
+        <option value="Middleweight">Middleweight </option>
+        <option value="Light heavyweight">Light heavyweight</option>
+        <option value="Heavyweight">Heavyweight</option>
+</select>
         <label>Main:</label>
         <input type="checkbox" id="main" name="main">
         <br>
