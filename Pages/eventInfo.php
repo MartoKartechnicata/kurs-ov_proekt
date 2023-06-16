@@ -15,7 +15,7 @@ session_start();
 $_SESSION['event_id']=$_GET['event'];
 $title=mysqli_query($connection, "Select name from event where id='{$_SESSION["event_id"]}'");
 $title=$title->fetch_assoc();
-$allFights=mysqli_query($connection, "Select * from fight join event on fight.Event_id=event.id where event.id='{$_SESSION["event_id"]}'");
+$allFights=mysqli_query($connection, "Select fight.id from fight join event on fight.Event_id=event.id where event.id='{$_SESSION["event_id"]}'");
 ?>
 <!doctype html>
 <html>
@@ -42,10 +42,13 @@ $allFights=mysqli_query($connection, "Select * from fight join event on fight.Ev
       <h1 class="events-header"><?php echo $title['name'] ?>    FIGHT CARD</h1>
   <?php 
 while ($row = $allFights->fetch_assoc()){
+
 $f1=mysqli_query($connection, "Select * from fighter join fight on fighter1id=fighter.id where fight.id='{$row["id"]}'");
 $fighter1=$f1->fetch_assoc();
 $f2=mysqli_query($connection, "Select * from fighter join fight on fighter2id=fighter.id where fight.id='{$row["id"]}'");
-$fighter2=$f2->fetch_assoc();?>
+$fighter2=$f2->fetch_assoc();
+$fightRow=mysqli_query($connection, "Select * from fight where id='{$row["id"]}'");
+$fightRow=$fightRow->fetch_assoc();?>
 <div class="container-fluid events-container ">
 <div class="d-md-block d-none">
   <div class="row">
@@ -57,7 +60,7 @@ $fighter2=$f2->fetch_assoc();?>
       <div class="container fight-info-container">
         <div class="row">
           <p class="fighter-names">Fight info</p>
-          <p>Weight class: <?php echo $row['weight_class']; ?></p>
+          <p>Weight class: <?php echo $fightRow['weight_class']; ?></p>
           <div class="col">
           <ul style="text-align:start">
               <li>Test 1</li>
@@ -84,7 +87,6 @@ $fighter2=$f2->fetch_assoc();?>
           </div>
         </div>
       </div>
-      
     </div>
     <div class="col-3 fighter-2-align">
     <img src="../images/<?php echo $fighter2['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter2["firstName"]." ".$fighter2["lastName"]?>">
