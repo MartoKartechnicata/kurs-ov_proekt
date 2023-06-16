@@ -15,7 +15,7 @@ session_start();
 $_SESSION['event_id']=$_GET['event'];
 $title=mysqli_query($connection, "Select name from event where id='{$_SESSION["event_id"]}'");
 $title=$title->fetch_assoc();
-$allFights=mysqli_query($connection, "Select fight.id from fight join event on fight.Event_id=event.id where event.id='{$_SESSION["event_id"]}'");
+$allFights=mysqli_query($connection, "Select * from fight join event on fight.Event_id=event.id where event.id='{$_SESSION["event_id"]}'");
 ?>
 <!doctype html>
 <html>
@@ -38,13 +38,14 @@ $allFights=mysqli_query($connection, "Select fight.id from fight join event on f
     include "../components/header.html" 
     ?>
     </header>
+    <main>
+      <h1 class="events-header"><?php echo $title['name'] ?>    FIGHT CARD</h1>
   <?php 
 while ($row = $allFights->fetch_assoc()){
 $f1=mysqli_query($connection, "Select * from fighter join fight on fighter1id=fighter.id where fight.id='{$row["id"]}'");
 $fighter1=$f1->fetch_assoc();
 $f2=mysqli_query($connection, "Select * from fighter join fight on fighter2id=fighter.id where fight.id='{$row["id"]}'");
 $fighter2=$f2->fetch_assoc();?>
-
 <div class="container-fluid events-container ">
 <div class="d-md-block d-none">
   <div class="row">
@@ -53,10 +54,58 @@ $fighter2=$f2->fetch_assoc();?>
     </div>
     <div class="col-6 text-center">
       <p class="fighter-names"><?php echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"];?> </p>
+      <div class="container fight-info-container">
+        <div class="row">
+          <p class="fighter-names">Fight info</p>
+          <p>Weight class: <?php echo $row['weight_class']; ?></p>
+          <div class="col">
+          <ul style="text-align:start">
+              <li>Test 1</li>
+              <li>test 2</li>
+              <li>test 3</li>
+              <li>test 4</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="text-center">
+              <li>Height</li>
+              <li>Weight</li>
+              <li>Course</li>
+              <li>Room</li>
+            </ul>
+          </div>
+          <div class="col" style="text-align:end;">
+          <ul>
+              <li>test 1</li>
+              <li>test 2</li>
+              <li>test 3</li>
+              <li>test 4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
     </div>
     <div class="col-3 fighter-2-align">
     <img src="../images/<?php echo $fighter2['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter2["firstName"]." ".$fighter2["lastName"]?>">
     </div>
+  </div>
+  </div>
+  <div class="d-block d-md-none">
+  <div class="row row-border text-center">
+    <div class="col ">
+      <p class="fighter-names"><?php echo $fighter1["firstName"]." ".$fighter1["lastName"]." vs ".$fighter2["firstName"]." ".$fighter2["lastName"];?> </p>
+    </div>
+  </div>
+  <div class="row row-border event-background-mobile">
+    <div class="col">
+      <img src="../images/<?php echo $fighter1['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter1["firstName"]." ".$fighter1["lastName"]?>">
+    </div>
+    <div class="col fighter-2-align">
+      <img src="../images/<?php echo $fighter2['picture_name']?>" class="events-fighter-picture" alt="<?php echo $fighter2["firstName"]." ".$fighter2["lastName"]?>">
+    </div>
+  </div>
+  <div class="row text-center">
   </div>
   </div>
 </div>
@@ -67,6 +116,7 @@ $fighter2=$f2->fetch_assoc();?>
 }
 ?>
     <br>
+    </main>
     <footer class="position-static bottom-0 start-0 end-0">
       <?php 
       include "../components/footer.html" 

@@ -311,6 +311,14 @@ footer{
   .row-border{
     border-bottom: 2px crimson solid;
   }
+
+  .fight-info-container{
+    border: 3px crimson solid;
+    margin-bottom: 2%;
+    margin-top: 5%;
+    width: 65%;
+    background-color: white;
+  }
   
 @media screen and (min-width: 768px) {
     body{
