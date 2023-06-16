@@ -13,7 +13,7 @@ main{
     height:100%;
 }
 
-
+  
 .textSize-profile{
     font-size: large;
 }
@@ -22,19 +22,6 @@ main{
 }
 .crimsonbg {
     background-color: crimson;
-}
-
-div.kutiqGreen{
-    border: 1px solid green;
-   padding: 25px;
-}
-
-.greentext{
-    color:green;
-}
-
-.greenbg{
-    background-color: green;
 }
 
 .crimsontext{
@@ -240,6 +227,13 @@ footer{
     margin-bottom: 2%;
     width: 75%;
     border: 2px crimson solid;
+    position:relative;
+  }
+
+  .tickets-container{
+    width: 100%;
+    outline: 2px black solid;
+    margin-top: 1px;
     position:relative;
   }
   

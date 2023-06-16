@@ -103,49 +103,73 @@ $categoryA = $p2['categoryA'];
   <div class="container-fluid">
     <h1 class="text-center"><?php echo $eventName?></h1>
   <form method="post" enctype="multipart/form-data">
+  <div class="container-fluid tickets-container ">
+<div class="d-md-block d-none">
   <div class="row justify-content-between">
-    <div class="col-4">
+    <div class="col-2">
 		<h4>Category A:</h4>
-    <p>some stuff </p>
     <h6>Price: <?php echo $categoryA;?></h6>
 </div>
-<div class="col-4">
+<div class="col-1">
 <label>Quantity:</label>
 	<input type="number" name="quantityA" class="form-control" min="0">
 </div>
 </div>
+</div>
+</div>
 
+<div class="container-fluid tickets-container ">
+<div class="d-md-block d-none">
 <div class="row justify-content-between">
-    <div class="col-6">
+    <div class="col-2">
 		<h4>Category B:</h4>
-    <p>some stuff </p>
     <h6>Price: <?php echo $categoryB;?></h6>
 </div>
-<div class="col-4">
+<div class="col-1">
 <label>Quantity:</label>
 	<input type="number" name="quantityB" class="form-control" min="0">
 </div>
 </div>
+</div>
+</div>
+
+<div class="container-fluid tickets-container ">
+<div class="d-md-block d-none">
 <div class="row justify-content-between">
-    <div class="col-4">
+    <div class="col-2">
 		<h4>Category C:</h4>
-    <p>some stuff </p>
     <h6>Price: <?php echo $categoryC;?></h6>
 </div>
-<div class="col-4">
+<div class="col-1">
 <label>Quantity:</label>
 	<input type="number" name="quantityC" class="form-control" min="0">
 </div>
 </div>
+</div>
+</div>
+
+<div class="container-fluid tickets-container ">
+<div class="d-md-block d-none">
 <div class="row justify-content-between">
-    <div class="col-4">
+    <div class="col-2">
 		<h4>VIP Experience:</h4>
-    <p>some stuff </p>
     <h6>Price: <?php echo $vip;?></h6>
 </div>
-<div class="col-4">
+<div class="col-9">
+  <p>
+  VIP experience USF tickets provide unparalleled access and prime seating for an unforgettable evening of intense MMA action. 
+  With unobstructed views of the octagon, fans experience every punch, kick, and submission up close. Located near the center of the arena, 
+  these tickets offer a clear line of sight to all the adrenaline-fueled battles. Accompanied by VIP perks and amenities like access to exclusive 
+  lounges and complimentary food and beverages, VIP ticket holders enjoy a luxurious and immersive experience. 
+  It's the ultimate opportunity to be part of the passionate crowd, witness legendary fighters, and feel the electrifying atmosphere of 
+  the world's premier combat sports event.
+  </p>
+</div>
+<div class="col-1">
 <label>Quantity:</label>
 	<input type="number" name="quantityVIP" class="form-control" min="0">
+</div>
+</div>
 </div>
 </div>
 </div>
