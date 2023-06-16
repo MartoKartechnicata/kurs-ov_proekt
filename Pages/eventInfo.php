@@ -16,6 +16,7 @@ $_SESSION['event_id']=$_GET['event'];
 $title=mysqli_query($connection, "Select name from event where id='{$_SESSION["event_id"]}'");
 $title=$title->fetch_assoc();
 $allFights=mysqli_query($connection, "Select fight.id from fight join event on fight.Event_id=event.id where event.id='{$_SESSION["event_id"]}'");
+
 ?>
 <!doctype html>
 <html>
@@ -48,7 +49,10 @@ $fighter1=$f1->fetch_assoc();
 $f2=mysqli_query($connection, "Select * from fighter join fight on fighter2id=fighter.id where fight.id='{$row["id"]}'");
 $fighter2=$f2->fetch_assoc();
 $fightRow=mysqli_query($connection, "Select * from fight where id='{$row["id"]}'");
-$fightRow=$fightRow->fetch_assoc();?>
+$fightRow=$fightRow->fetch_assoc();
+$time=mysqli_query($connection, "SELECT time, SUBSTRING(time ,1,5) FROM kp.fight where fight.id={$row['id']};");
+$time=$time->fetch_assoc();
+$time=$time['SUBSTRING(time ,1,5)'];?>
 <div class="container-fluid events-container ">
 <div class="d-md-block d-none">
   <div class="row">
@@ -60,17 +64,18 @@ $fightRow=$fightRow->fetch_assoc();?>
       <div class="container fight-info-container">
         <div class="row">
           <p class="fighter-names">Fight info</p>
-          <p>Weight class: <?php echo $fightRow['weight_class']; ?></p>
+          <p class="no-margin-padding"><span class="fight-info-text">Time: </span><span class="fight-info-numbers"><?php echo $time ?></span></p>
+          <p class="no-margin-padding"><span class="fight-info-text">Weight class: </span><span class="fight-info-numbers"><?php echo $fightRow['weight_class']; ?></span></p>
           <div class="col">
-          <ul style="text-align:start">
-              <li>Test 1</li>
-              <li>test 2</li>
-              <li>test 3</li>
-              <li>test 4</li>
+          <ul class="fight-info-numbers" style="text-align:start">
+              <li><?php echo $fighter1["height"]?>cm</li>
+              <li><?php echo $fighter1["weight"]?>kg</li>
+              <li><?php echo $fighter1["class"]?></li>
+              <li><?php echo $fighter1["roomNum"]?></li>
             </ul>
           </div>
           <div class="col">
-            <ul class="text-center">
+            <ul class="text-center fight-info-text">
               <li>Height</li>
               <li>Weight</li>
               <li>Course</li>
@@ -78,11 +83,11 @@ $fightRow=$fightRow->fetch_assoc();?>
             </ul>
           </div>
           <div class="col" style="text-align:end;">
-          <ul>
-              <li>test 1</li>
-              <li>test 2</li>
-              <li>test 3</li>
-              <li>test 4</li>
+          <ul class="fight-info-numbers" style="text-align:end">
+              <li><?php echo $fighter2["height"]?>cm</li>
+              <li><?php echo $fighter2["weight"]?>kg</li>
+              <li><?php echo $fighter2["class"]?></li>
+              <li><?php echo $fighter2["roomNum"]?></li>
             </ul>
           </div>
         </div>
@@ -108,6 +113,33 @@ $fightRow=$fightRow->fetch_assoc();?>
     </div>
   </div>
   <div class="row text-center">
+  <p class="fighter-names">Fight info</p>
+          <p class="no-margin-padding"><span class="fight-info-text">Time: </span><span class="fight-info-numbers"><?php echo $time ?></span></p>
+          <p class="no-margin-padding"><span class="fight-info-text">Weight class: </span><span class="fight-info-numbers"><?php echo $fightRow['weight_class']; ?></span></p>
+          <div class="col">
+          <ul class="fight-info-numbers" style="text-align:start">
+              <li><?php echo $fighter1["height"]?>cm</li>
+              <li><?php echo $fighter1["weight"]?>kg</li>
+              <li><?php echo $fighter1["class"]?></li>
+              <li><?php echo $fighter1["roomNum"]?></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="text-center fight-info-text">
+              <li>Height</li>
+              <li>Weight</li>
+              <li>Course</li>
+              <li>Room</li>
+            </ul>
+          </div>
+          <div class="col" style="text-align:end;">
+          <ul class="fight-info-numbers" style="text-align:end">
+              <li><?php echo $fighter2["height"]?>cm</li>
+              <li><?php echo $fighter2["weight"]?>kg</li>
+              <li><?php echo $fighter2["class"]?></li>
+              <li><?php echo $fighter2["roomNum"]?></li>
+            </ul>
+</div>
   </div>
   </div>
 </div>

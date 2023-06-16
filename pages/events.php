@@ -66,8 +66,7 @@ where fight.id='{$mainEvent["id"]}'");
 $fighter2=$f2->fetch_assoc();
 $eventNumber=mysqli_query($connection, "SELECT name, SUBSTRING(name ,5,2) FROM kp.event where event.id={$row['id']};");
 $eventNumber=$eventNumber->fetch_assoc();
-$eventNumber=$eventNumber['SUBSTRING(name ,5,2)'];
- ?> 
+$eventNumber=$eventNumber['SUBSTRING(name ,5,2)']?> 
 <div class="container-fluid events-container ">
 <div class="d-md-block d-none">
   <div class="row">
@@ -125,28 +124,3 @@ $eventNumber=$eventNumber['SUBSTRING(name ,5,2)'];
     </footer>
     </body>
 </html>
-<?php /* $ef=mysqli_query($connection, "Select fight.* from fight join event on Event_id=event.id where event.id='{$row['id']}'");
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-	  <div class="carousel-inner">
-      <?php
-    while ($eventFights=$ef->fetch_assoc()) {
-      $fighters=mysqli_query($connection, "Select fighter.* from fighter join fight 
-      on fighter1id=fighter.id or fighter2id=fighter.id where fight.id='{$eventFights['id']}'")
-      ?>
-		<div class="carousel-item active">
-		  <img src="../images/<?php echo $fighters['picture_name']?>" class="d-block w-100" alt="...">
-		</div>
-    <?php
-    }
-    ?>
-    </div>
-	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Previous</span>
-	  </button>
-	  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Next</span>
-	  </button>
-	</div>	*/
-  ?>
