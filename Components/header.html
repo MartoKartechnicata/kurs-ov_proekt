@@ -21,10 +21,18 @@
       </ul>
       <?php
       if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) { ?>
-        <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'profile.php';">Profile</button>
+        <ul class="navbar-nav me-1 mb-1 mb-lg-0 navbar-text">
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-light btn-nav" onclick="window.location.href = 'profile.php';">Profile</button>
+          </li>
+        </ul>
         <?php
       if ($_SESSION['admin']==1) { ?>
-        <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'eventAdd.php';">Admin</button>
+        <ul class="navbar-nav me-1 mb-1 mb-lg-0 navbar-text">
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'eventAdd.php';">Admin</button>
+          </li>
+        </ul>
       <?php }?>
       <?php } else { ?>
         <ul class="navbar-nav me-1 mb-1 mb-lg-0 navbar-text">

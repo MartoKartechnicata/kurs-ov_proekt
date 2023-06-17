@@ -231,6 +231,7 @@ footer{
   }
 
   .tickets-container{
+    margin-bottom: 3%;
     width: 100%;
     outline: 2px black solid;
     margin-top: 1px;
@@ -320,7 +321,48 @@ footer{
     margin:0;
     padding:0;
   }
+
   
+  .event-name-ticket{
+    font-size: 250%;
+  }
+
+  .ticket-type-col{
+    text-align: end;
+    padding: 0%;
+    margin:0%;
+  }
+  .ticket-type-text{
+    color:crimson;
+    font-size: 3rem;
+    padding: 0px;
+    margin: 0px;
+  }
+  .ticket-type-text-2{
+    color:black;
+    font-size: 3rem;
+    padding:0px;
+    margin:0px; 
+  }
+
+  .ticket-information{
+    margin-top:2%;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .tickets-names{
+    font-size: 2rem;
+    padding-top:0.5%;
+  }
+
+  .tickets-email{
+    font-size: 0.9rem;
+    position: relative;
+    opacity: 0.3;
+    bottom:0.65rem;
+  }
+
 @media screen and (min-width: 768px) {
     .navbar-text{
         font-size: 1.25rem;
@@ -492,5 +534,16 @@ footer{
         margin-top: 2%;
         width: 60%;
         background-color: white;
+      }
+
+      .tickets-container{
+        margin-bottom: 1%;
+        width: 65%;
+        outline: 2px black solid;
+        margin-top: 1px;
+        position:relative;
+      }
+      .event-name-ticket{
+        font-size: 350%;
       }
 }
