@@ -231,10 +231,8 @@ footer{
   }
 
   .tickets-container{
-    margin-bottom: 3%;
     width: 100%;
-    outline: 2px black solid;
-    margin-top: 1px;
+    outline: 2px crimson solid;
     position:relative;
   }
   

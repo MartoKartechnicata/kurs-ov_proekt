@@ -104,12 +104,15 @@ $categoryA = $p2['categoryA'];
     <h1 class="text-center"><?php echo $eventName?></h1>
   <form method="post" enctype="multipart/form-data">
   <div class="container-fluid tickets-container ">
-<div class="d-md-block d-none">
-  <div class="row justify-content-between">
+<div class="block">
+  <div class="row">
     <div class="col-2">
 		<h4>Category A:</h4>
     <h6>Price: <?php echo $categoryA;?></h6>
 </div>
+    <div class="col-9">
+    <p>Introducing the ultimate UFC experience with our Category A tickets! Get ready to witness the electrifying action from the front row as these tickets provide exclusive access to seats in rows 1 to 5. With unmatched proximity to the octagon, you'll be in the heart of the action, feeling the intensity as every punch and submission unfolds before your eyes. Immerse yourself in the atmosphere of raw power and skill as the world's top fighters clash in epic battles. Don't miss your chance to secure these second best tickets, offering an unparalleled view and an unforgettable UFC experience. Get your Category A tickets now and be a part of the action like never before!</p>
+  </div>
 <div class="col-1">
 <label>Quantity:</label>
 	<input type="number" name="quantityA" class="form-control" min="0">
@@ -119,11 +122,15 @@ $categoryA = $p2['categoryA'];
 </div>
 
 <div class="container-fluid tickets-container ">
-<div class="d-md-block d-none">
-<div class="row justify-content-between">
+<div class="block">
+<div class="row ">
     <div class="col-2">
 		<h4>Category B:</h4>
     <h6>Price: <?php echo $categoryB;?></h6>
+</div>
+<div class="col-9">
+  <p>
+Welcome to the thrill of UFC with our Category B tickets! Experience the heart-pounding action from rows 6 to 10, as you immerse yourself in the electrifying atmosphere of the octagon. These second best tickets offer an excellent vantage point, providing a great view of all the intense strikes and ground battles that unfold before you. Feel the energy and adrenaline as the world's finest fighters showcase their skills in epic clashes. Don't miss your chance to secure your Category B tickets and be a part of this unforgettable UFC event. Grab your seats now and prepare for an evening of exhilarating fights!</p>
 </div>
 <div class="col-1">
 <label>Quantity:</label>
@@ -134,13 +141,16 @@ $categoryA = $p2['categoryA'];
 </div>
 
 <div class="container-fluid tickets-container ">
-<div class="d-md-block d-none">
-<div class="row justify-content-between">
+<div class="block">
+<div class="row">
     <div class="col-2">
 		<h4>Category C:</h4>
     <h6>Price: <?php echo $categoryC;?></h6>
 </div>
-<div class="col-1">
+<div class="col-9">
+  
+</div>
+  <div class="col-1">
 <label>Quantity:</label>
 	<input type="number" name="quantityC" class="form-control" min="0">
 </div>
@@ -149,8 +159,8 @@ $categoryA = $p2['categoryA'];
 </div>
 
 <div class="container-fluid tickets-container ">
-<div class="d-md-block d-none">
-<div class="row justify-content-between">
+<div class="block">
+<div class="row">
     <div class="col-2">
 		<h4>VIP Experience:</h4>
     <h6>Price: <?php echo $vip;?></h6>
