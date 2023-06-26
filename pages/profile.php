@@ -52,6 +52,7 @@ $date = new DateTime();
     <h6 class="tickets-email"><?php echo $_SESSION['email']?></h6>
   </div>
   </div>
+  <button style="width:10%" type="button" class="btn btn-danger" onclick="window.location.href = '../components/logout.php';">Log Out</button>
   </div>
   <hr noshade style="margin-top:0px; padding-top:0px;">
   <h1 class="text-center pb-3" >YOUR TICKETS</h1>

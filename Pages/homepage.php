@@ -42,7 +42,6 @@ session_start();
     </header>
 
     <main style="background-color:white">
-    <button type="button" class="btn btn-danger" onclick="window.location.href = '../components/logout.php';">Log Out</button>
         <p>text</p>
     </main>
     
