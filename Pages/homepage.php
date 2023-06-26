@@ -34,23 +34,14 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../Style.css">
 </head>
 
-<body>
-    <header>
-      <?php 
-      include "../components/header.html" 
-      ?>
-    </header>
-
-    <main style="background-color:white">
-        <p>text</p>
-    </main>
-    
-    <footer class="position-static bottom-0 start-0 end-0">
-      <?php 
-      include "../components/footer.html" 
-      ?>
-    </footer>
-    
+<body class="home-background">
+  <div class="container home-container">
+    <div class="row">
+      <div class="col">
+      <p class="home-header">WELCOME TO THE OFFICIAL HOME OF THE USF</p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

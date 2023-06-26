@@ -375,6 +375,23 @@ footer{
     bottom:0.65rem;
   }
 
+  .home-background{
+    background-image: url("images/background.jpg");
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        left:0;
+  }
+  .home-header{
+    font-size: 3rem;
+    color:white;
+    text-align: center;
+    font-weight: 700;
+  }
+  .home-container{
+    margin-top: 7.5rem;
+  }
+
 @media screen and (min-width: 768px) {
     .navbar-text{
         font-size: 1.25rem;
