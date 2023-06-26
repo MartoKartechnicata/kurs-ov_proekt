@@ -34,6 +34,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../Style.css">
 </head>
 <header>
+<div class="d-md-block d-none">
   <div class="container-fluid">
     <div class="row">
       <div class="col">
@@ -42,7 +43,13 @@ session_start();
       <div class="col">
         <h1 class="slogan-home">We make the big fights happen</h1>
       </div>
+      </div>
     </div>
+</div>
+    <div class="d-md-none d-block">
+    <?php 
+    include "../components/header.html" 
+    ?>
   </div>
 </header>
 <body class="home-background">
