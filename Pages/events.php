@@ -39,11 +39,6 @@ session_start();
 <?php
 
 $allEvents = mysqli_query($connection, "SELECT * FROM event");
-if ( isset( $_POST['submit'] ) ) {
-    $event=$_POST['submit'];
-    $_SESSION["event_id"]=$event;
-    header("Location: eventInfo.php");
-}
 ?>
 
   <?php 
