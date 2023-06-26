@@ -361,22 +361,45 @@ footer{
     bottom:0.65rem;
   }
 
-  .home-background{
-    background-image: url("images/background.jpg");
+  .home-header{
+    font-size: 3rem;
+    color:crimson;
+    text-align: center;
+    font-weight: 700;
+  }
+  .home-container{
+    height: 39rem;
+  }
+  .home-text-container{
+    height: 15rem;
+    margin-top: 20rem;
+    margin-left: 0.75rem;
+    border:white 3px solid;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .home-text{
+    color:white;
+    margin-bottom:3rem;
+  }
+
+  .row-bg{
+    background-image: url("images/home-page-bg.jpg");
         background-size:cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
         left:0;
   }
-  .home-header{
-    font-size: 3rem;
-    color:white;
-    text-align: center;
-    font-weight: 700;
+  .logo-home{
+    height: 4rem;
   }
-  .home-container{
-    margin-top: 7.5rem;
+  .slogan-home{
+    color:crimson;
+    text-align: end;
+    padding-top: 1%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
   }
+  
 
 @media screen and (min-width: 768px) {
     .navbar-text{
@@ -468,6 +491,7 @@ footer{
         margin-top: 2%;
         margin-bottom: 0%;
         font-weight: normal;
+        color:black;
     }
     .fight-info-container{
         margin-bottom: 2%;
@@ -560,5 +584,44 @@ footer{
       }
       .event-name-ticket{
         font-size: 350%;
+      }
+      .home-header{
+        font-size: 3rem;
+        color:crimson;
+        text-align: center;
+        font-weight: 700;
+      }
+      .home-container{
+        height: 39rem;
+      }
+      .home-text-container{
+        height: 15rem;
+        margin-top: 20rem;
+        margin-left: 0.75rem;
+        border:white 3px solid;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .home-text{
+        color:white;
+        margin-bottom:3rem;
+      }
+    
+      .row-bg{
+        background-image: url("images/home-page-bg.jpg");
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            left:0;
+      }
+    
+      .logo-home{
+        height: 4rem;
+      }
+      .slogan-home{
+        color:crimson;
+        text-align: end;
+        padding-top: 1%;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
       }
 }
