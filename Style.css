@@ -66,6 +66,12 @@ color: antiquewhite;
     padding-bottom: 1%;
 }
 
+.btn-ticket{
+    margin-bottom: 1%;
+    width:34%;
+}
+
+
 .register-form-heading{
     color:crimson;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -230,10 +236,18 @@ footer{
     position:relative;
   }
 
-  .tickets-container{
+  .ticket-container{
     width: 100%;
-    outline: 2px crimson solid;
+    border-left: 2px black solid;
+    border-top: 2px black solid;
+    border-right: 2px black solid;
     position:relative;
+  }
+  .ticket-l-container{
+    width: 100%;
+    border: 2px black solid;
+    position:relative;
+    margin-bottom: 1%;
   }
   
   .fighter-2-align{

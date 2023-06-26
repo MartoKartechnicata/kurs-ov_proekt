@@ -72,7 +72,7 @@ $categoryA = $p2['categoryA'];
         $vip=$vip-1;
         $st=mysqli_query($connection, "UPDATE availableseats SET `vip` = {$vip} WHERE event_id = {$_SESSION['event_id']}");
       }
-      header("location:eventinfo.php");
+      header("location:profile.php");
     } else{
       echo "error";
     }
@@ -103,12 +103,12 @@ $categoryA = $p2['categoryA'];
   <div class="container-fluid">
     <h1 class="text-center"><?php echo $eventName?></h1>
   <form method="post" enctype="multipart/form-data">
-  <div class="container-fluid tickets-container ">
+  <div class="container-fluid ticket-container ">
 <div class="block">
   <div class="row">
     <div class="col-2">
 		<h4>Category A:</h4>
-    <h6>Price: <?php echo $categoryA;?></h6>
+    <h6>Price: $<?php echo $categoryA;?></h6>
 </div>
     <div class="col-9">
     <p>Introducing the ultimate UFC experience with our Category A tickets! Get ready to witness the electrifying action from the front row as these tickets provide exclusive access to seats in rows 1 to 5. With unmatched proximity to the octagon, you'll be in the heart of the action, feeling the intensity as every punch and submission unfolds before your eyes. Immerse yourself in the atmosphere of raw power and skill as the world's top fighters clash in epic battles. Don't miss your chance to secure these second best tickets, offering an unparalleled view and an unforgettable UFC experience. Get your Category A tickets now and be a part of the action like never before!</p>
@@ -121,16 +121,16 @@ $categoryA = $p2['categoryA'];
 </div>
 </div>
 
-<div class="container-fluid tickets-container ">
+<div class="container-fluid ticket-container ">
 <div class="block">
 <div class="row ">
     <div class="col-2">
 		<h4>Category B:</h4>
-    <h6>Price: <?php echo $categoryB;?></h6>
+    <h6>Price: $<?php echo $categoryB;?></h6>
 </div>
 <div class="col-9">
   <p>
-Welcome to the thrill of UFC with our Category B tickets! Experience the heart-pounding action from rows 6 to 10, as you immerse yourself in the electrifying atmosphere of the octagon. These second best tickets offer an excellent vantage point, providing a great view of all the intense strikes and ground battles that unfold before you. Feel the energy and adrenaline as the world's finest fighters showcase their skills in epic clashes. Don't miss your chance to secure your Category B tickets and be a part of this unforgettable UFC event. Grab your seats now and prepare for an evening of exhilarating fights!</p>
+Welcome to the thrill of UFC with our Category B tickets! Experience the heart-pounding action from rows 6 to 10, as you immerse yourself in the electrifying atmosphere of the octagon. These third best tickets offer an excellent vantage point, providing a great view of all the intense strikes and ground battles that unfold before you. Feel the energy and adrenaline as the world's finest fighters showcase their skills in epic clashes. Don't miss your chance to secure your Category B tickets and be a part of this unforgettable UFC event. Grab your seats now and prepare for an evening of exhilarating fights!</p>
 </div>
 <div class="col-1">
 <label>Quantity:</label>
@@ -140,17 +140,16 @@ Welcome to the thrill of UFC with our Category B tickets! Experience the heart-p
 </div>
 </div>
 
-<div class="container-fluid tickets-container ">
+<div class="container-fluid ticket-container ">
 <div class="block">
 <div class="row">
     <div class="col-2">
 		<h4>Category C:</h4>
-    <h6>Price: <?php echo $categoryC;?></h6>
+    <h6>Price: $<?php echo $categoryC;?></h6>
 </div>
-<div class="col-9">
-  
-</div>
-  <div class="col-1">
+    <div class="col-9">
+<p>Experience the heart-pounding action of UFC with our Category C tickets! These fourth best tickets offer an incredible opportunity to witness the thrilling battles from rows 11 to 15. Take your seat and get ready to be captivated by the explosive strikes and intense ground maneuvers as the world's top fighters showcase their skills in the octagon. With Category C, you'll still enjoy a fantastic view of the action-packed fights, feeling the adrenaline rush with every powerful blow. Don't miss your chance to secure these tickets and be part of the electrifying UFC atmosphere. Get your Category C tickets now and prepare for an unforgettable evening of combat sports excellence!</p>
+  </div>  <div class="col-1">
 <label>Quantity:</label>
 	<input type="number" name="quantityC" class="form-control" min="0">
 </div>
@@ -158,12 +157,12 @@ Welcome to the thrill of UFC with our Category B tickets! Experience the heart-p
 </div>
 </div>
 
-<div class="container-fluid tickets-container ">
+<div class="container-fluid ticket-l-container ">
 <div class="block">
 <div class="row">
     <div class="col-2">
 		<h4>VIP Experience:</h4>
-    <h6>Price: <?php echo $vip;?></h6>
+    <h6>Price: $<?php echo $vip;?></h6>
 </div>
 <div class="col-9">
   <p>
@@ -183,7 +182,9 @@ Welcome to the thrill of UFC with our Category B tickets! Experience the heart-p
 </div>
 </div>
 </div>
-    <input class="btn btn-success" type="submit" name="submit" value="Book tickets">  
+<div class="text-center">
+<input class="btn btn-success btn-ticket" type="submit" name="submit" value="Book tickets" > 
+</div> 
 </form>
 </div>
 <footer class="position-static bottom-0 start-0 end-0">

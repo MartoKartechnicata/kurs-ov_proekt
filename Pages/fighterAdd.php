@@ -89,7 +89,7 @@ if ( isset( $_POST['submit'] ) ) {
 		// изписва съобщение, че всичко е минало успешно
 		
 		if ( $result ) {
-			echo "<center style='color:green;'>Продуктът е добавен успешно</center>";
+			echo "<center style='color:green;'>Боецът е добавен успешно</center>";
 		}
 	}
 	

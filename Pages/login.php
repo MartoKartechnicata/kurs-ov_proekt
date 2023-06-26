@@ -14,6 +14,7 @@ if (!$connection) {
 }
 
 session_start(); 
+$error = false;
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
@@ -32,9 +33,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = validate($_POST['email']);
 
     $pass = validate($_POST['password']);
-
-
-    $error = false;
 
     if ( empty( $email ) ) {
 
@@ -75,7 +73,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
         }
         else{
-            echo "Error";
+            $error=true;
         }
 
     }
@@ -107,6 +105,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
       include "../components/header.html" 
       ?>
   </header>
+  <?php if($error){
+    echo "Wrong email or password";
+    }?>
   <main class="form-background">
   <div class="container-fluid text-center">
     <div class="row">
