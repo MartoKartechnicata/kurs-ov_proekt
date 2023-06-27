@@ -182,7 +182,7 @@ if ( isset( $_POST['submit'] ) ) {
     <div class="row">
         <div class="col">
         <div class="d-lg-block d-none">
-        <h1 class="slogan">We make the big fights happen</h1>
+        <h1 class="slogan">The best fighters, and the best fights</h1>
         </div>
 </div>
 </div>
