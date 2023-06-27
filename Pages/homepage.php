@@ -56,8 +56,16 @@ session_start();
       <a class="btn btn-outline-dark" href="events.php">Events</a>
       <a class="btn btn-outline-dark" href="aboutus.php">About Us</a>
       <a class="btn btn-outline-dark" href="contacts.php">Contacts</a>
+      <?php if (!isset($_SESSION['user_id'])){?>
       <a class="btn btn-outline-dark" href="registration.php">Register</a>
       <a class="btn btn-outline-dark" href="login.php">Log In</a>
+      <?php
+      } else{
+        ?>
+        <a class="btn btn-outline-dark" href="profile.php">Profile</a>
+        <?php
+      }
+      ?>
       </div>
     </div>
   </div>
