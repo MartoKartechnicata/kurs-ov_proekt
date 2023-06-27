@@ -36,30 +36,44 @@ session_start();
 <body class="home-background">
   <div class="container-fluid">
   <div class="row">
-    <div class="col-2">
+    <div class="col-12 col-lg-2 home-logo-align">
     <img src="../images/logo1-white.png" alt="logo" class="home-logo">
     </div>
     <div class="col">
+    <div class="d-md-block d-none">
     <h1 class="home-header">WELCOME TO THE OFFICIAL HOME OF UKTC STUDENT FIGHTS</h1>
+</div>
   </div>
   </div>
   </div> 
   <div class="container">
     <div class="row">
       <div class="col text-center">
-        <h2>The best fighters, and the best fights</h2>
-        <h4>
+        <div class="d-md-block d-none">
+          <h2>The best fighters, and the best fights</h2>
+        </div>
+        <div class="d-md-none d-block">
+          <h2>WELCOME TO THE OFFICIAL HOME OF UKTC STUDENT FIGHTS</h2>
+        </div>
       </div>
     </div>
     <div class="row">
-      <div class="col text-center">
+      <div class="col-12 text-center">
+      <div class="d-md-block d-none">
       <a class="btn btn-outline-dark" href="events.php">Events</a>
       <a class="btn btn-outline-dark" href="aboutus.php">About Us</a>
       <a class="btn btn-outline-dark" href="contacts.php">Contacts</a>
       <a class="btn btn-outline-dark" href="registration.php">Register</a>
       <a class="btn btn-outline-dark" href="login.php">Log In</a>
-      </div>
+      </div>     
+      <div class="d-md-none d-block">
+      <a class="btn btn-outline-light btn-home mb-1" href="events.php">Events</a><br>
+      <a class="btn btn-outline-light btn-home mb-1" href="aboutus.php">About Us</a><br>
+      <a class="btn btn-outline-light btn-home mb-1" href="contacts.php">Contacts</a><br>
+      <a class="btn btn-outline-light btn-home mb-1" href="registration.php">Register</a><br>
+      <a class="btn btn-outline-light btn-home mb-1" href="login.php">Log In</a><br>
     </div>
+</div>
   </div>
 </body>
 
