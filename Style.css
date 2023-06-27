@@ -298,17 +298,6 @@ footer{
     position: relative;
 }
 
-.event-background-mobile:before{
-  content: ' ';
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.3;
-  background-image: url('images/logo1.png');
-  background-position: center center;
-  background-size: 41%;
-}
 .events-fighter-picture{
     position: relative;
     height: 10rem;
