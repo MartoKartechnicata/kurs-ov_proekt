@@ -68,9 +68,18 @@ session_start();
         <a class="home-btn btn btn-outline-light" href="contacts.php">Contacts</a>
       </div>
       <div class="col text-center home-text-container">
+        <?php if (!isset($_SESSION['user_id'])){
+          ?>
         <p class="home-text">Log into an existing profile or register if you're new</p>
         <a class="home-btn btn btn-outline-light" href="registration.php" style="margin-bottom:1%">Register</a><br>
         <a class="btn btn-outline-light" href="login.php">Log In</a>
+        <?php
+        } else{
+          ?>
+          <p class="home-text">See your account info and tickets in the profile page</p>
+                  <a class="home-btn btn btn-outline-light" href="profile.php">Profile</a>
+          <?php
+        } ?>
       </div>
     </div>
     
