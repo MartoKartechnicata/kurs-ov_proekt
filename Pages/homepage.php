@@ -75,7 +75,7 @@ session_start();
       ?>
       </div>
       </div>     
-      <div class="d-md-none d-block">
+      <div class="d-md-none d-block text-center">
       <a class="btn btn-outline-light btn-home mb-1" href="events.php">Events</a><br>
       <a class="btn btn-outline-light btn-home mb-1" href="aboutus.php">About Us</a><br>
       <a class="btn btn-outline-light btn-home mb-1" href="contacts.php">Contacts</a><br>
