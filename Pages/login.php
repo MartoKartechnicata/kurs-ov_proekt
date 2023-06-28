@@ -128,7 +128,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 <form method="post" class="login-form" enctype="multipart/form-data">
 <div class="container-fluid border-container-form form-color">
 <div class="row register-form-heading">
-<div class="d-md-block d-none">
     <h2 style="text-align:center">Sign In</h2>
 </div>
 <div class="d-md-none d-block">
